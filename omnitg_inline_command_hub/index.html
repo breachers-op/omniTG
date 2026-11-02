@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#10131a;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary": "#4cd7f6", "surface-container-high": "#272a31", "surface-container-low": "#191c22", "on-error-container": "#ffdad6", "on-primary-fixed": "#001e2e", "surface-tint": "#86cfff", "primary-container": "#24a1de", "surface-container-lowest": "#0b0e14", "surface-variant": "#32353c", "inverse-primary": "#00658f", "on-background": "#e1e2eb", "surface-dim": "#10131a", "primary-fixed": "#c8e6ff", "secondary-fixed-dim": "#d0bcff", "surface": "#10131a", "surface-bright": "#363940", "on-primary": "#00344c", "tertiary-fixed-dim": "#4cd7f6", "on-secondary": "#3c0091", "outline-variant": "#3e4850", "tertiary-container": "#00a6c2", "on-surface-variant": "#bec8d1", "tertiary-fixed": "#acedff", "primary": "#86cfff", "secondary-container": "#571bc1", "on-secondary-fixed": "#23005c", "on-secondary-fixed-variant": "#5516be", "on-tertiary-fixed-variant": "#004e5c", "on-tertiary-container": "#003540", "surface-container": "#1d2026", "inverse-surface": "#e1e2eb", "surface-container-highest": "#32353c", "on-tertiary-fixed": "#001f26", "secondary-fixed": "#e9ddff", "on-surface": "#e1e2eb", "error": "#ffb4ab", "secondary": "#d0bcff", "outline": "#88929b", "primary-fixed-dim": "#86cfff", "on-primary-fixed-variant": "#004c6d", "on-error": "#690005", "on-tertiary": "#003640", "inverse-on-surface": "#2e3037", "error-container": "#93000a", "on-primary-container": "#00344c", "background": "#10131a", "on-secondary-container": "#c4abff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "0.75rem", "space-lg": "1rem", "margin": "1rem", "gutter": "0.75rem", "space-sm": "0.5rem", "space-xl": "1.5rem", "space-xs": "0.25rem" }, fontFamily: { "display-lg": ["Inter"], "body-sm": ["Inter"], "body-md": ["Inter"], "display-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "headline-md": ["Inter"], "headline-lg": ["Inter"], "label-badge": ["Inter"], "label-code": ["JetBrains Mono"], "body-lg": ["Inter"] }, fontSize: { "display-lg": ["32px", { lineHeight: "38px", fontWeight: "800" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "display-lg-mobile": ["26px", { lineHeight: "32px", fontWeight: "800" }], "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }], "headline-md": ["20px", { lineHeight: "26px", fontWeight: "600" }], "headline-lg": ["24px", { lineHeight: "30px", fontWeight: "700" }], "label-badge": ["11px", { lineHeight: "14px", fontWeight: "700" }], "label-code": ["12px", { lineHeight: "16px", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface flex flex-col min-h-screen selection:bg-primary selection:text-on-primary"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl pt-safe shadow-[0_4px_24px_rgba(0,0,0,0.4)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Telegram Context Menu" class="w-11 h-11 flex items-center justify-center rounded-xl bg-surface-container/60 text-on-surface hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">tune</span></button><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-code text-label-code text-tertiary tracking-wide uppercase">MTProto Go</span></div><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Inline &amp; Commands</h1></div></div><div class="flex items-center gap-space-xs shrink-0"><div class="hidden sm:flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-surface-container-high"><span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span><span class="font-label-code text-[10px] text-on-surface-variant">SYNCED</span></div><button aria-label="Close Mini App" class="w-11 h-11 flex items-center justify-center rounded-xl bg-surface-container/60 text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">close</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full px-margin pt-16 pb-28 bg-surface"><div class="flex flex-col w-full gap-space-lg select-none">
+<!-- Bot Command Hub Meta Header -->
+<section class="flex flex-col gap-space-sm pt-space-xs">
+<div class="p-space-md rounded-xl bg-surface-container-high/60 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.35)] flex flex-col gap-space-xs">
+<div class="flex items-center justify-between gap-space-xs flex-wrap">
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-lowest">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+<span class="font-label-code text-[11px] text-tertiary uppercase tracking-wider font-semibold">MTProto Bot API v7.1</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-code text-[11px]">
+<span class="text-tertiary">⚡</span>
+<span>99.98% Latency ~14ms</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-1 text-on-surface">
+<span class="text-lg">🤖</span>
+<span class="font-headline-sm text-headline-sm tracking-tight text-on-surface">OmniTG Command Hub</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        28 Registered Slash Commands • 14 Inline Query Handlers • Group &amp; Direct Sync
+      </p>
+</div>
+<!-- Glowing Interactive Search Bar -->
+<div class="relative w-full">
+<div class="relative flex items-center bg-surface-container-lowest/90 rounded-xl px-space-md shadow-[0_0_15px_rgba(36,161,222,0.1)] focus-within:shadow-[0_0_20px_rgba(76,215,246,0.25)] transition-all">
+<span class="text-lg mr-2.5">🔍</span>
+<input class="w-full h-12 bg-transparent text-on-surface placeholder:text-outline font-label-code text-body-sm outline-none" id="commandSearchInput" placeholder="Filter command or trigger (e.g. /play, /ban, @omni_bot)..." type="text"/>
+<button class="text-outline hover:text-primary transition-colors text-xs font-label-code hidden px-1.5 py-0.5 rounded bg-surface-container-high" id="clearSearchBtn">
+          ESC
+        </button>
+</div>
+</div>
+</section>
+<!-- Inline Query Switchboard (@omni_bot mode) -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="text-base">🪄</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Telegram Inline Switchboard</h2>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-code text-[10px] tracking-wide uppercase font-semibold">
+        @omni_bot
+      </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+      Type in any Telegram chat input box to summon ambient micro-app cards and instant streaming replies.
+    </p>
+<!-- Carousel / Horizontal Cards -->
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- Inline Query 1: YouTube VC Audio -->
+<div class="p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-md flex flex-col gap-space-xs relative overflow-hidden group">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="text-base">🎵</span>
+<code class="font-label-code text-label-code text-tertiary bg-surface-container-lowest px-2 py-0.5 rounded">@omni_bot yt &lt;query&gt;</code>
+</div>
+<span class="font-label-badge text-label-badge text-primary bg-primary-container/20 px-2 py-0.5 rounded-full">Stream</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Pulls lossless audio preview with metadata from YouTube, Spotify, and SoundCloud.
+        </p>
+<div class="mt-1 p-2 rounded-lg bg-surface-container-lowest flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-2 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-variant flex items-center justify-center shrink-0">
+<span class="text-sm">📻</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-code text-[11px] text-on-surface truncate">Cyber_Drift_2077.flac</span>
+<span class="font-label-code text-[10px] text-outline">03:42 • 320kbps Opus</span>
+</div>
+</div>
+<button class="shrink-0 flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-code text-[11px] shadow-[0_2px_12px_rgba(36,161,222,0.4)] active:scale-95 transition-transform">
+<span>▶️</span>
+<span>VC Stream</span>
+</button>
+</div>
+</div>
+<!-- Inline Query 2: AI Live Streaming -->
+<div class="p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="text-base">🤖</span>
+<code class="font-label-code text-label-code text-secondary bg-surface-container-lowest px-2 py-0.5 rounded">@omni_bot ai &lt;prompt&gt;</code>
+</div>
+<span class="font-label-badge text-label-badge text-secondary bg-secondary-container/30 px-2 py-0.5 rounded-full">Realtime</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Streams LLM responses directly into the message text bar with smart code syntax formatting.
+        </p>
+<div class="mt-1 p-2 rounded-lg bg-surface-container-lowest flex items-center gap-2 text-on-surface-variant font-label-code text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="truncate">Thinking: "Summarize consensus protocol in 2 bullets..."</span>
+</div>
+</div>
+<!-- Inline Query 3 & 4 Mini Grid -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Game / Dice -->
+<div class="p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-md flex flex-col justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="text-base">🎮</span>
+<code class="font-label-code text-[11px] text-tertiary">@omni_bot game</code>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Instant cyber trivia or dice roll mini-games in chat.</p>
+<div class="flex items-center justify-between text-[11px] font-label-code text-tertiary-fixed pt-1">
+<span>🎲 6-Sided Roll</span>
+<span class="text-xs">⚡ Fast</span>
+</div>
+</div>
+<!-- Bancheck Reputation -->
+<div class="p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md shadow-md flex flex-col justify-between gap-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="text-base">🛡️</span>
+<code class="font-label-code text-[11px] text-error">@omni_bot check</code>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Instant CAS, Spamwatch &amp; blacklisted ID check.</p>
+<div class="flex items-center justify-between text-[11px] font-label-code text-on-surface pt-1">
+<span class="text-tertiary">🛡️ 0 Flags</span>
+<span class="text-xs">Safe</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Filter Pills -->
+<section class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1">
+<button class="cat-pill px-3 py-1.5 rounded-full font-label-code text-[11px] bg-primary text-on-primary shadow-[0_0_12px_rgba(36,161,222,0.35)] shrink-0 transition-all" data-cat="all">
+        ⚡ All (28)
+      </button>
+<button class="cat-pill px-3 py-1.5 rounded-full font-label-code text-[11px] bg-surface-container-high text-on-surface-variant hover:text-on-surface shrink-0 transition-all" data-cat="music">
+        🎵 Music (5)
+      </button>
+<button class="cat-pill px-3 py-1.5 rounded-full font-label-code text-[11px] bg-surface-container-high text-on-surface-variant hover:text-on-surface shrink-0 transition-all" data-cat="mod">
+        🛡️ Guard (5)
+      </button>
+<button class="cat-pill px-3 py-1.5 rounded-full font-label-code text-[11px] bg-surface-container-high text-on-surface-variant hover:text-on-surface shrink-0 transition-all" data-cat="ai">
+        🤖 AI Core (4)
+      </button>
+<button class="cat-pill px-3 py-1.5 rounded-full font-label-code text-[11px] bg-surface-container-high text-on-surface-variant hover:text-on-surface shrink-0 transition-all" data-cat="arcade">
+        🎮 Arcade (4)
+      </button>
+</div>
+</section>
+<!-- Command Directory by Category -->
+<section class="flex flex-col gap-space-lg" id="commandCatalog">
+<!-- Category 1: Music -->
+<div class="command-group flex flex-col gap-space-sm" data-category="music">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="text-base">🎵</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Voice Chat &amp; Music</h3>
+</div>
+<span class="font-label-code text-[11px] text-tertiary">TG Voice Engine</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- /play -->
+<div class="command-item p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex flex-col gap-space-xs" data-keywords="/play stream youtube spotify vc voice audio">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-body-md font-bold text-tertiary">/play</span>
+<span class="font-label-code text-[11px] text-outline">[url | query]</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-outline font-label-code text-[10px]">⏱️ 3s</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-tertiary font-label-code text-[10px]">👥 Public</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Connects to active group Voice Chat and queues or immediately streams high-bitrate audio.
+          </p>
+</div>
+<!-- /queue -->
+<div class="command-item p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex flex-col gap-space-xs" data-keywords="/queue playlist track songs list">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-body-md font-bold text-tertiary">/queue</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-outline font-label-code text-[10px]">⏱️ 2s</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-tertiary font-label-code text-[10px]">👥 Public</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Displays upcoming tracks with inline pagination, reordering buttons, and vote-skip tallies.
+          </p>
+</div>
+<!-- /volume -->
+<div class="command-item p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex flex-col gap-space-xs" data-keywords="/volume gain sound loud 0-200%">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-body-md font-bold text-tertiary">/volume</span>
+<span class="font-label-code text-[11px] text-outline">[0-200%]</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-outline font-label-code text-[10px]">⏱️ 5s</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-secondary font-label-code text-[10px]">👑 Admin</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Adjusts real-time master output amplitude in Voice Chat stream without audio clipping.
+          </p>
+</div>
+<!-- /skip -->
+<div class="command-item p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex flex-col gap-space-xs" data-keywords="/skip next track song voteskip">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-body-md font-bold text-tertiary">/skip</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-outline font-label-code text-[10px]">⏱️ 3s</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-tertiary font-label-code text-[10px]">👥 Public</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Skips currently playing song immediately (or registers user vote if non-admin vote-skip is enabled).
+          </p>
+</div>
+<!-- /bassboost -->
+<div class="command-item p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex flex-col gap-space-xs" data-keywords="/bassboost equalizer audio fx filter db">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-body-md font-bold text-tertiary">/bassboost</span>
+<span class="font-label-code text-[11px] text-outline">[0-15dB]</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-outline font-label-code text-[10px]">⏱️ 10s</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-secondary font-label-code text-[10px]">👑 Admin</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Applies an inline hardware-accelerated low-shelf equalizer filter dynamically to VC pipe.
+          </p>
+</div>
+</div>
+</div>
+<!-- Category 2: Moderation & Guard -->
+<div class="command-group flex flex-col gap-space-sm" data-category="mod">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="text-base">🛡️</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Moderation &amp; Guard</h3>
+</div>
+<span class="font-label-code text-[11px] text-error">Shield Active</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- /mute -->
+<div class="command-item p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex flex-col gap-space-xs" data-keywords="/mute restrict silence timeout duration">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-body-md font-bold text-error">/mute</span>
+<span class="font-label-code text-[11px] text-outline">[@user] [time]</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-outline font-label-code text-[10px]">⏱️ 0s</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-secondary font-label-code text-[10px]">👑 Admin</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Revokes text and voice message permissions for specified duration (e.g. 15m, 2h, 7d).
+          </p>
+</div>
+<!-- /ban -->
+<div class="command-item p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex flex-col gap-space-xs" data-keywords="/ban kick block blacklist">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-body-md font-bold text-error">/ban</span>
+<span class="font-label-code text-[11px] text-outline">[@user | reply]</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-outline font-label-code text-[10px]">⏱️ 0s</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-secondary font-label-code text-[10px]">👑 Admin</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Bans user from group permanently, purges recent messages, and logs fingerprint to guard network.
+          </p>
+</div>
+<!-- /warn -->
+<div class="command-item p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex flex-col gap-space-xs" data-keywords="/warn strike infractions penalty">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-body-md font-bold text-error">/warn</span>
+<span class="font-label-code text-[11px] text-outline">[@user] [reason]</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-outline font-label-code text-[10px]">⏱️ 1s</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-secondary font-label-code text-[10px]">👑 Admin</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Issues a strike to user. Automatically applies auto-mute or kick upon reaching limit (3/3).
+          </p>
+</div>
+<!-- /purge -->
+<div class="command-item p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex flex-col gap-space-xs" data-keywords="/purge clean delete bulk count">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-body-md font-bold text-error">/purge</span>
+<span class="font-label-code text-[11px] text-outline">[1-100]</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-outline font-label-code text-[10px]">⏱️ 5s</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-secondary font-label-code text-[10px]">👑 Admin</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Instantly deletes specified batch of previous chat messages up to the replied anchor point.
+          </p>
+</div>
+<!-- /antiflood -->
+<div class="command-item p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex flex-col gap-space-xs" data-keywords="/antiflood spam rate limit lock">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-body-md font-bold text-error">/antiflood</span>
+<span class="font-label-code text-[11px] text-outline">[on|off|limit]</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-outline font-label-code text-[10px]">⏱️ 0s</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-secondary font-label-code text-[10px]">👑 Admin</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Limits consecutive messages per second; silences rapid spammers and automated bot raids.
+          </p>
+</div>
+</div>
+</div>
+<!-- Category 3: AI Assistant -->
+<div class="command-group flex flex-col gap-space-sm" data-category="ai">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="text-base">🤖</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">AI Neural Assistant</h3>
+</div>
+<span class="font-label-code text-[11px] text-secondary">Claude &amp; Gemini</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- /ask -->
+<div class="command-item p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex flex-col gap-space-xs" data-keywords="/ask ai chat prompt gpt llm question">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-body-md font-bold text-secondary">/ask</span>
+<span class="font-label-code text-[11px] text-outline">[prompt]</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-outline font-label-code text-[10px]">⏱️ 5s</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-tertiary font-label-code text-[10px]">👥 Public</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Answers complex queries, code debugging, or creative instructions within the active group thread.
+          </p>
+</div>
+<!-- /summarize -->
+<div class="command-item p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex flex-col gap-space-xs" data-keywords="/summarize digest tl;dr recap chat history">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-body-md font-bold text-secondary">/summarize</span>
+<span class="font-label-code text-[11px] text-outline">[last 100 msgs]</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-outline font-label-code text-[10px]">⏱️ 15s</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-tertiary font-label-code text-[10px]">👥 Public</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Reads recent chat conversation history and produces an executive bullet-point recap.
+          </p>
+</div>
+<!-- /imagine -->
+<div class="command-item p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex flex-col gap-space-xs" data-keywords="/imagine art draw generate picture image diffusion">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-body-md font-bold text-secondary">/imagine</span>
+<span class="font-label-code text-[11px] text-outline">[prompt]</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-outline font-label-code text-[10px]">⏱️ 20s</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-tertiary font-label-code text-[10px]">👥 Public</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Synthesizes high-resolution artwork and renders 4 variations with upscaling inline buttons.
+          </p>
+</div>
+<!-- /model -->
+<div class="command-item p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex flex-col gap-space-xs" data-keywords="/model switch provider sonnet gemini deepseek">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-body-md font-bold text-secondary">/model</span>
+<span class="font-label-code text-[11px] text-outline">[sonnet|gemini]</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-outline font-label-code text-[10px]">⏱️ 2s</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-secondary font-label-code text-[10px]">👑 Admin</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Switches underlying neural foundation model and adjusts temperature settings for group chat.
+          </p>
+</div>
+</div>
+</div>
+<!-- Category 4: Arcade & Fun -->
+<div class="command-group flex flex-col gap-space-sm" data-category="arcade">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="text-base">🎮</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Arcade &amp; Community</h3>
+</div>
+<span class="font-label-code text-[11px] text-primary">XP Gamified</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- /trivia -->
+<div class="command-item p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex flex-col gap-space-xs" data-keywords="/trivia quiz questions game xp">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-body-md font-bold text-primary">/trivia</span>
+<span class="font-label-code text-[11px] text-outline">[category]</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-outline font-label-code text-[10px]">⏱️ 5s</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-tertiary font-label-code text-[10px]">👥 Public</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Launches Telegram native interactive poll with countdown timer; distributes group XP to winners.
+          </p>
+</div>
+<!-- /roll -->
+<div class="command-item p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex flex-col gap-space-xs" data-keywords="/roll dice random number chance">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-body-md font-bold text-primary">/roll</span>
+<span class="font-label-code text-[11px] text-outline">[1-100 | dice]</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-outline font-label-code text-[10px]">⏱️ 1s</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-tertiary font-label-code text-[10px]">👥 Public</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Provably fair cryptographic random generator with Telegram animated dice and slot physics.
+          </p>
+</div>
+<!-- /leaderboard -->
+<div class="command-item p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex flex-col gap-space-xs" data-keywords="/leaderboard top ranks xp levels stats">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-body-md font-bold text-primary">/leaderboard</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-outline font-label-code text-[10px]">⏱️ 5s</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-tertiary font-label-code text-[10px]">👥 Public</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Ranks top active chat members by message frequency, trivia streak score, and reputation karma.
+          </p>
+</div>
+<!-- /daily -->
+<div class="command-item p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex flex-col gap-space-xs" data-keywords="/daily reward streak coin bonus">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-body-md font-bold text-primary">/daily</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-outline font-label-code text-[10px]">⏱️ 24h</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-tertiary font-label-code text-[10px]">👥 Public</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Collects 24-hour streak bonus coins with haptic confirmation and jackpot chance multipliers.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Custom Regex Triggers & Auto-Replies -->
+<section class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="text-base">🎯</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Custom Regex Triggers &amp; Automations</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-code text-[10px]">
+        3 Active
+      </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+      Event-driven message interceptors that parse chat messages and trigger instant scripted reactions.
+    </p>
+<!-- Triggers List -->
+<div class="flex flex-col gap-space-xs">
+<!-- Trigger 1: Welcome Greeting -->
+<div class="p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex items-center justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="text-sm">👋</span>
+<span class="font-label-code text-body-md font-semibold text-on-surface truncate">Welcome Greeting Card</span>
+</div>
+<span class="font-label-code text-[11px] text-tertiary truncate mt-0.5">Event: ChatMemberUpdated • Rich Banner</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Sends animated dynamic welcome card with button verification captcha.</span>
+</div>
+<!-- Cyber Switch -->
+<button aria-checked="true" class="trigger-toggle w-12 h-7 rounded-full bg-primary-container p-0.5 shrink-0 transition-colors flex items-center justify-end shadow-[0_0_12px_rgba(36,161,222,0.4)]" role="switch">
+<div class="w-6 h-6 rounded-full bg-on-primary flex items-center justify-center shadow-sm transition-transform">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+</div>
+</button>
+</div>
+<!-- Trigger 2: Keyword Auto-Responder -->
+<div class="p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex items-center justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="text-sm">💬</span>
+<span class="font-label-code text-body-md font-semibold text-on-surface truncate">Keyword Auto-Responder</span>
+</div>
+<span class="font-label-code text-[11px] text-tertiary truncate mt-0.5">Regex: /(presale|audit|contract|ca)/i</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Dispatches official pinned portal links with auto-delete after 60s.</span>
+</div>
+<!-- Cyber Switch -->
+<button aria-checked="true" class="trigger-toggle w-12 h-7 rounded-full bg-primary-container p-0.5 shrink-0 transition-colors flex items-center justify-end shadow-[0_0_12px_rgba(36,161,222,0.4)]" role="switch">
+<div class="w-6 h-6 rounded-full bg-on-primary flex items-center justify-center shadow-sm transition-transform">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+</div>
+</button>
+</div>
+<!-- Trigger 3: Anti-Crypto Phish Link Blocker -->
+<div class="p-space-md rounded-xl bg-surface-container/70 backdrop-blur-md flex items-center justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="text-sm">🔖</span>
+<span class="font-label-code text-body-md font-semibold text-on-surface truncate">Anti-Crypto Phish Link Blocker</span>
+</div>
+<span class="font-label-code text-[11px] text-error truncate mt-0.5">Regex: /(airdrop-claim|drainer-auth|walletconnect.*\.xyz)/i</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Instant delete + warn strike + silent reporting to group owners.</span>
+</div>
+<!-- Cyber Switch -->
+<button aria-checked="true" class="trigger-toggle w-12 h-7 rounded-full bg-primary-container p-0.5 shrink-0 transition-colors flex items-center justify-end shadow-[0_0_12px_rgba(36,161,222,0.4)]" role="switch">
+<div class="w-6 h-6 rounded-full bg-on-primary flex items-center justify-center shadow-sm transition-transform">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+</div>
+</button>
+</div>
+</div>
+<!-- Glowing CTA Button -->
+<button class="mt-2 w-full py-3.5 px-4 rounded-xl bg-primary text-on-primary font-label-code text-body-md font-bold flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(36,161,222,0.4)] active:scale-[0.98] transition-all" id="createTriggerBtn">
+<span class="text-lg">⚡</span>
+<span>+ Create New Custom Trigger</span>
+</button>
+</section>
+<!-- Interactive Modal / Slide Sheet (Hidden by default) -->
+<div class="fixed inset-x-0 bottom-0 z-50 p-space-md bg-surface-container-high/95 backdrop-blur-2xl rounded-t-2xl shadow-[0_-8px_36px_rgba(0,0,0,0.7)] translate-y-full transition-transform duration-300 max-w-lg mx-auto flex flex-col gap-space-md" id="triggerModal">
+<div class="w-12 h-1 bg-surface-variant rounded-full mx-auto"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-lg">🪄</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">New Regex Bot Trigger</h4>
+</div>
+<button class="p-1 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface" id="closeModalBtn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-code text-[11px] text-on-surface-variant">TRIGGER TITLE</label>
+<input class="w-full h-11 px-3 rounded-lg bg-surface-container-lowest text-on-surface font-label-code text-body-sm outline-none focus:ring-1 focus:ring-primary" placeholder="e.g. Price Bot Summoner" type="text"/>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-code text-[11px] text-on-surface-variant">REGEX PATTERN (ECMASCRIPT)</label>
+<input class="w-full h-11 px-3 rounded-lg bg-surface-container-lowest text-tertiary font-label-code text-body-sm outline-none focus:ring-1 focus:ring-primary" placeholder="^(\!|\/)(price|chart)\s?([A-Za-z]+)?" type="text"/>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-code text-[11px] text-on-surface-variant">AUTOMATED ACTION</label>
+<div class="grid grid-cols-2 gap-2">
+<button class="p-2 rounded-lg bg-primary-container/20 text-primary font-label-code text-xs text-center font-bold">Reply Template</button>
+<button class="p-2 rounded-lg bg-surface-container-lowest text-outline font-label-code text-xs text-center">Delete &amp; Mute</button>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl bg-primary text-on-primary font-label-code text-body-sm font-bold shadow-[0_4px_16px_rgba(36,161,222,0.4)]" id="saveTriggerBtn">
+      Deploy Interceptor to Bot
+    </button>
+</div>
+<div class="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" id="modalBackdrop"></div>
+<!-- Micro-interactions Script -->
+<script>
+    // Search Filtering
+    const searchInput = document.getElementById('commandSearchInput');
+    const clearBtn = document.getElementById('clearSearchBtn');
+    const commandItems = document.querySelectorAll('.command-item');
+    const commandGroups = document.querySelectorAll('.command-group');
+
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      clearBtn.classList.toggle('hidden', query.length === 0);
+
+      commandItems.forEach(item => {
+        const keywords = item.getAttribute('data-keywords').toLowerCase();
+        const text = item.innerText.toLowerCase();
+        const match = keywords.includes(query) || text.includes(query);
+        item.style.display = match ? 'flex' : 'none';
+      });
+
+      // Hide group if all items are hidden
+      commandGroups.forEach(group => {
+        const visibleItems = group.querySelectorAll('.command-item:not([style*="display: none"])');
+        group.style.display = visibleItems.length > 0 ? 'flex' : 'none';
+      });
+    });
+
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      clearBtn.classList.add('hidden');
+      commandItems.forEach(item => item.style.display = 'flex');
+      commandGroups.forEach(group => group.style.display = 'flex');
+      searchInput.focus();
+    });
+
+    // Category Tabs Filtering
+    const catPills = document.querySelectorAll('.cat-pill');
+    catPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        catPills.forEach(p => {
+          p.classList.remove('bg-primary', 'text-on-primary', 'shadow-[0_0_12px_rgba(36,161,222,0.35)]');
+          p.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        });
+        pill.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+        pill.classList.add('bg-primary', 'text-on-primary', 'shadow-[0_0_12px_rgba(36,161,222,0.35)]');
+
+        const cat = pill.getAttribute('data-cat');
+        commandGroups.forEach(group => {
+          if (cat === 'all' || group.getAttribute('data-category') === cat) {
+            group.style.display = 'flex';
+          } else {
+            group.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Toggle Switches (Haptic Delight)
+    const toggles = document.querySelectorAll('.trigger-toggle');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const isChecked = toggle.getAttribute('aria-checked') === 'true';
+        toggle.setAttribute('aria-checked', !isChecked);
+        
+        if (!isChecked) {
+          toggle.classList.remove('bg-surface-variant', 'justify-start');
+          toggle.classList.add('bg-primary-container', 'justify-end', 'shadow-[0_0_12px_rgba(36,161,222,0.4)]');
+          toggle.querySelector('span').classList.add('bg-tertiary');
+        } else {
+          toggle.classList.remove('bg-primary-container', 'justify-end', 'shadow-[0_0_12px_rgba(36,161,222,0.4)]');
+          toggle.classList.add('bg-surface-variant', 'justify-start');
+          toggle.querySelector('span').classList.remove('bg-tertiary');
+        }
+
+        // Trigger native Telegram WebApp haptic feedback if running inside Telegram
+        if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.HapticFeedback) {
+          window.Telegram.WebApp.HapticFeedback.impactOccurred('light');
+        }
+      });
+    });
+
+    // Custom Trigger Drawer Modal
+    const createTriggerBtn = document.getElementById('createTriggerBtn');
+    const triggerModal = document.getElementById('triggerModal');
+    const modalBackdrop = document.getElementById('modalBackdrop');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const saveTriggerBtn = document.getElementById('saveTriggerBtn');
+
+    function openModal() {
+      triggerModal.classList.remove('translate-y-full');
+      modalBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.HapticFeedback) {
+        window.Telegram.WebApp.HapticFeedback.impactOccurred('medium');
+      }
+    }
+
+    function closeModal() {
+      triggerModal.classList.add('translate-y-full');
+      modalBackdrop.classList.add('opacity-0', 'pointer-events-none');
+    }
+
+    createTriggerBtn.addEventListener('click', openModal);
+    closeModalBtn.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', closeModal);
+    saveTriggerBtn.addEventListener('click', () => {
+      closeModal();
+      if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.HapticFeedback) {
+        window.Telegram.WebApp.HapticFeedback.notificationOccurred('success');
+      }
+    });
+  </script>
+</div></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.5)]" data-active-classes="text-primary bg-primary-container/20 rounded-xl"><div class="flex items-center justify-between gap-1 h-20 px-2 overflow-x-auto no-scrollbar"><a class="flex flex-col items-center justify-center min-w-[56px] h-14 p-1 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors" data-path="ops-and-admin" href="#"><span class="text-[18px] leading-tight">🎛️</span><span class="font-label-badge text-[10px] tracking-tight truncate mt-1">Ops</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-14 p-1 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors" data-path="inline-and-commands" href="#"><span class="text-[18px] leading-tight">⚡</span><span class="font-label-badge text-[10px] tracking-tight truncate mt-1">Commands</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-14 p-1 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors" data-path="ai-agent" href="#"><span class="text-[18px] leading-tight">🤖</span><span class="font-label-badge text-[10px] tracking-tight truncate mt-1">AI</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-14 p-1 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors" data-path="mod-guard" href="#"><span class="text-[18px] leading-tight">🛡️</span><span class="font-label-badge text-[10px] tracking-tight truncate mt-1">Guard</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-14 p-1 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors" data-path="music-vc" href="#"><span class="text-[18px] leading-tight">🎵</span><span class="font-label-badge text-[10px] tracking-tight truncate mt-1">Music</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-14 p-1 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors" data-path="arcade" href="#"><span class="text-[18px] leading-tight">🎮</span><span class="font-label-badge text-[10px] tracking-tight truncate mt-1">Arcade</span></a></div></nav></body></html>

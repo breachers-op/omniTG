@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#10131a;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary": "#4cd7f6", "surface-container-high": "#272a31", "surface-container-low": "#191c22", "on-error-container": "#ffdad6", "on-primary-fixed": "#001e2e", "surface-tint": "#86cfff", "primary-container": "#24a1de", "surface-container-lowest": "#0b0e14", "surface-variant": "#32353c", "inverse-primary": "#00658f", "on-background": "#e1e2eb", "surface-dim": "#10131a", "primary-fixed": "#c8e6ff", "secondary-fixed-dim": "#d0bcff", "surface": "#10131a", "surface-bright": "#363940", "on-primary": "#00344c", "tertiary-fixed-dim": "#4cd7f6", "on-secondary": "#3c0091", "outline-variant": "#3e4850", "tertiary-container": "#00a6c2", "on-surface-variant": "#bec8d1", "tertiary-fixed": "#acedff", "primary": "#86cfff", "secondary-container": "#571bc1", "on-secondary-fixed": "#23005c", "on-secondary-fixed-variant": "#5516be", "on-tertiary-fixed-variant": "#004e5c", "on-tertiary-container": "#003540", "surface-container": "#1d2026", "inverse-surface": "#e1e2eb", "surface-container-highest": "#32353c", "on-tertiary-fixed": "#001f26", "secondary-fixed": "#e9ddff", "on-surface": "#e1e2eb", "error": "#ffb4ab", "secondary": "#d0bcff", "outline": "#88929b", "primary-fixed-dim": "#86cfff", "on-primary-fixed-variant": "#004c6d", "on-error": "#690005", "on-tertiary": "#003640", "inverse-on-surface": "#2e3037", "error-container": "#93000a", "on-primary-container": "#00344c", "background": "#10131a", "on-secondary-container": "#c4abff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "0.75rem", "space-lg": "1rem", "margin": "1rem", "gutter": "0.75rem", "space-sm": "0.5rem", "space-xl": "1.5rem", "space-xs": "0.25rem" }, fontFamily: { "display-lg": ["Inter"], "body-sm": ["Inter"], "body-md": ["Inter"], "display-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "headline-md": ["Inter"], "headline-lg": ["Inter"], "label-badge": ["Inter"], "label-code": ["JetBrains Mono"], "body-lg": ["Inter"] }, fontSize: { "display-lg": ["32px", { lineHeight: "38px", fontWeight: "800" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "display-lg-mobile": ["26px", { lineHeight: "32px", fontWeight: "800" }], "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }], "headline-md": ["20px", { lineHeight: "26px", fontWeight: "600" }], "headline-lg": ["24px", { lineHeight: "30px", fontWeight: "700" }], "label-badge": ["11px", { lineHeight: "14px", fontWeight: "700" }], "label-code": ["12px", { lineHeight: "16px", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface flex flex-col min-h-screen selection:bg-primary selection:text-on-primary"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl pt-safe shadow-[0_4px_24px_rgba(0,0,0,0.4)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Telegram Context Menu" class="w-11 h-11 flex items-center justify-center rounded-xl bg-surface-container/60 text-on-surface hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">tune</span></button><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-code text-label-code text-tertiary tracking-wide uppercase">MTProto Go</span></div><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Ops &amp; Admin</h1></div></div><div class="flex items-center gap-space-xs shrink-0"><div class="hidden sm:flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-surface-container-high"><span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span><span class="font-label-code text-[10px] text-on-surface-variant">SYNCED</span></div><button aria-label="Close Mini App" class="w-11 h-11 flex items-center justify-center rounded-xl bg-surface-container/60 text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">close</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full px-margin pt-16 pb-28 bg-surface"><div class="flex flex-col w-full gap-space-lg">
+<!-- TOP TELEMETRY CARD (Hero Stat Glass) -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-lg shadow-xl">
+<div class="absolute -top-12 -right-12 w-36 h-36 bg-tertiary/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute -bottom-10 -left-10 w-28 h-28 bg-primary-container/15 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-md">
+<!-- Status Bar Row -->
+<div class="flex items-center justify-between gap-space-sm flex-wrap">
+<div class="flex items-center gap-space-sm">
+<div class="relative flex items-center justify-center w-8 h-8 rounded-lg bg-surface-container-high">
+<span class="material-symbols-outlined text-tertiary text-[20px]">hub</span>
+<span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-tertiary animate-ping opacity-75"></span>
+<span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-code text-label-code text-on-surface-variant uppercase tracking-wider">Session DC 4</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate flex items-center gap-1">
+              CONNECTED
+              <span class="text-tertiary text-[14px]">🇳🇱 Amsterdam</span>
+</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="flex items-center gap-1 px-space-sm py-1 rounded-full bg-surface-container-highest">
+<span class="text-[12px]">⚡</span>
+<span class="font-label-code text-label-code text-tertiary font-bold">18ms</span>
+</div>
+<div class="flex items-center gap-1 px-space-sm py-1 rounded-full bg-surface-container-highest">
+<span class="text-[12px]">⏱️</span>
+<span class="font-label-code text-label-code text-on-surface">42d 14h</span>
+</div>
+</div>
+</div>
+<!-- Realtime Metric Badges Bar -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/80 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-on-surface-variant font-label-code text-[11px]">
+<span class="flex items-center gap-1">
+<span class="text-[13px]">🚀</span>
+<span class="text-on-surface font-semibold">Go v1.23.2</span>
+<span class="text-outline">·</span>
+<span>gotd/td v4.2</span>
+</span>
+<span class="text-tertiary">GC Pause: 0.12ms</span>
+</div>
+<!-- Memory Gauge Micro-bar -->
+<div class="flex flex-col gap-1 mt-1">
+<div class="flex justify-between items-center font-label-code text-[11px]">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span>💾</span> Heap RAM
+            </span>
+<span class="text-on-surface font-bold">64.2 MB <span class="text-outline font-normal">/ 512 MB (12.5%)</span></span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full rounded-full bg-tertiary" style="width: 12.5%;"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-1 mt-1">
+<div class="flex items-center justify-between px-space-xs py-1 rounded bg-surface-container-high/60 font-label-code text-[11px]">
+<span class="text-on-surface-variant">Goroutines</span>
+<span class="text-primary font-bold">142 live</span>
+</div>
+<div class="flex items-center justify-between px-space-xs py-1 rounded bg-surface-container-high/60 font-label-code text-[11px]">
+<span class="text-on-surface-variant">SLA Health</span>
+<span class="text-tertiary font-bold">99.98%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SESSIONS & POOLS (Bento Grid) -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="text-[14px]">📡</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Active Subsystems</h2>
+</div>
+<span class="font-label-code text-label-code text-tertiary uppercase">4 Services</span>
+</div>
+<!-- Userbot Streamer Session -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Userbot Streamer</span>
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+</div>
+<span class="font-label-code text-[11px] text-on-surface-variant">gogram / MTProto Direct</span>
+</div>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-highest font-label-code text-[10px] text-tertiary font-bold">PRIMARY</span>
+</div>
+<div class="flex items-center justify-between px-space-sm py-1.5 rounded-lg bg-surface-container font-label-code text-label-code">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span>🔊</span> Group Voice Channels
+        </span>
+<span class="text-primary font-bold">8 Active Calls</span>
+</div>
+</div>
+<!-- Bot API Worker -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">webhook</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Bot API Gateway</span>
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+</div>
+<span class="font-label-code text-[11px] text-on-surface-variant">Telegram HTTP v7.1 LongPoll</span>
+</div>
+</div>
+<div class="flex items-center gap-1 font-label-code text-[11px] text-on-surface">
+<span class="text-tertiary font-bold">124</span>
+<span class="text-outline">ev/s</span>
+</div>
+</div>
+<div class="w-full flex items-center gap-2">
+<div class="h-1 flex-1 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-secondary-container" style="width: 62%;"></div>
+</div>
+<span class="font-label-code text-[10px] text-on-surface-variant">Pipeline: 62% Cap</span>
+</div>
+</div>
+<!-- Split Database Grid -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- PostgreSQL Card -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1">
+<span class="text-[14px]">🐘</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">pgx Pool</span>
+</div>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-code text-label-code font-bold text-on-surface">12 / 20</span>
+<span class="font-label-code text-[10px] text-on-surface-variant">Active Conns</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-tertiary font-label-code text-[10px] text-center">HEALTHY</span>
+</div>
+<!-- Redis Cache Card -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1">
+<span class="text-[14px]">⚡</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Redis Cache</span>
+</div>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-code text-label-code font-bold text-primary">98.4% Hit</span>
+<span class="font-label-code text-[10px] text-on-surface-variant">4.2 MB KeyRAM</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-primary font-label-code text-[10px] text-center">SYNCED</span>
+</div>
+</div>
+</div>
+<!-- LIVE PIPELINE & TRAFFIC INSPECTOR -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-md shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="text-[14px]">📊</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Media &amp; Traffic Flow</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high font-label-code text-[10px] text-on-surface-variant">REAL-TIME</span>
+</div>
+<!-- Transcoder Row -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">graphic_eq</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">FFmpeg + yt-dlp Core</span>
+<span class="font-label-code text-[10px] text-tertiary">0 Dropped · Opus 48kHz</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-code text-label-code font-bold text-on-surface">2 Transcoding</span>
+</div>
+</div>
+<!-- Anti-Flood Token Bucket -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Anti-Flood Guard</span>
+<span class="font-label-code text-[10px] text-on-surface-variant">Rate: 30 msg/sec limit</span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-space-xs py-0.5 rounded bg-surface-container-high font-label-code text-[11px] text-tertiary">
+<span>0 Violations (1h)</span>
+</div>
+</div>
+</div>
+<!-- QUICK DAEMON CONTROL ACTIONS -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs px-space-xs">
+<span class="text-[14px]">⚙️</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Daemon Operations</h2>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Soft Restart -->
+<button class="group p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-space-xs text-left" id="btn-soft-restart">
+<div class="flex items-center justify-between w-full">
+<span class="text-[18px]">🔄</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary text-[18px] transition-colors">play_circle</span>
+</div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Soft Restart</span>
+<span class="font-label-code text-[10px] text-on-surface-variant">SIGHUP Zero Downtime</span>
+</button>
+<!-- Flush Redis -->
+<button class="group p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-space-xs text-left" id="btn-flush-redis">
+<div class="flex items-center justify-between w-full">
+<span class="text-[18px]">🧹</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-tertiary text-[18px] transition-colors">cleaning_services</span>
+</div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Flush Redis</span>
+<span class="font-label-code text-[10px] text-on-surface-variant">Prune stale keys</span>
+</button>
+<!-- Memory Dump -->
+<button class="group p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-space-xs text-left" id="btn-pprof">
+<div class="flex items-center justify-between w-full">
+<span class="text-[18px]">📥</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary text-[18px] transition-colors">download</span>
+</div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">pprof Heap</span>
+<span class="font-label-code text-[10px] text-on-surface-variant">Go Runtime Profile</span>
+</button>
+<!-- Rotate MTProto Keys -->
+<button class="group p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container-high transition-all flex flex-col gap-space-xs text-left" id="btn-rotate-keys">
+<div class="flex items-center justify-between w-full">
+<span class="text-[18px]">🔐</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-tertiary text-[18px] transition-colors">vpn_key</span>
+</div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Rotate Keys</span>
+<span class="font-label-code text-[10px] text-on-surface-variant">Re-auth MTProto AuthKey</span>
+</button>
+</div>
+<!-- Syslog Action Bar -->
+<button class="w-full h-12 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-semibold flex items-center justify-center gap-space-sm transition-all shadow-[0_4px_18px_rgba(36,161,222,0.35)] active:scale-[0.98]" id="btn-syslog-tail">
+<span class="text-[16px]">📜</span>
+<span class="font-body-md text-body-md font-semibold">Live Syslog Stream Tail</span>
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+</button>
+</div>
+<!-- RECENT GO RUNTIME EVENT STREAM (Terminal View) -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="text-[14px]">🛠️</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Runtime Event Feed</h3>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+<span class="font-label-code text-[10px] text-on-surface-variant uppercase">Stream Active</span>
+</div>
+</div>
+<div class="rounded-xl bg-surface-container-lowest p-space-md flex flex-col gap-2 font-label-code text-[11px] shadow-inner overflow-hidden">
+<!-- Log entry 1 -->
+<div class="flex items-start gap-space-xs leading-relaxed">
+<span class="text-outline shrink-0">14:02:18</span>
+<span class="px-1 rounded bg-surface-container-high text-tertiary shrink-0 font-bold">INFO</span>
+<span class="text-on-surface min-w-0 break-words">[gotd/session] Re-keyed ephemeral DH session for DC 4 connection. Ping: 18.2ms</span>
+</div>
+<!-- Log entry 2 -->
+<div class="flex items-start gap-space-xs leading-relaxed">
+<span class="text-outline shrink-0">14:02:11</span>
+<span class="px-1 rounded bg-surface-container-high text-primary shrink-0 font-bold">OK</span>
+<span class="text-on-surface min-w-0 break-words">[audio/ffmpeg] Opus transcode worker #2 spawned for chat_id=-100189204</span>
+</div>
+<!-- Log entry 3 -->
+<div class="flex items-start gap-space-xs leading-relaxed">
+<span class="text-outline shrink-0">14:01:45</span>
+<span class="px-1 rounded bg-surface-container-high text-secondary shrink-0 font-bold">OK</span>
+<span class="text-on-surface min-w-0 break-words">[pgx/pool] Acquired idle connection pool (idx 11). Pool health optimal.</span>
+</div>
+<!-- Log entry 4 -->
+<div class="flex items-start gap-space-xs leading-relaxed">
+<span class="text-outline shrink-0">14:00:22</span>
+<span class="px-1 rounded bg-surface-variant text-tertiary-fixed-dim shrink-0 font-bold">WARN</span>
+<span class="text-on-surface-variant min-w-0 break-words">[anti-flood] Peer #90284 nearing burst window threshold (28/30 msg). Throttled 200ms.</span>
+</div>
+<!-- Log entry 5 -->
+<div class="flex items-start gap-space-xs leading-relaxed">
+<span class="text-outline shrink-0">13:59:50</span>
+<span class="px-1 rounded bg-surface-container-high text-primary shrink-0 font-bold">INFO</span>
+<span class="text-on-surface min-w-0 break-words">[runtime/gc] Finished scavenge: freed 14.8MB heap, total pause 0.12ms.</span>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container (Dynamic micro-interactions) -->
+<div class="fixed top-20 inset-x-margin z-50 pointer-events-none transform transition-all duration-300 -translate-y-6 opacity-0 flex items-center justify-center" id="ops-toast">
+<div class="px-space-md py-space-sm rounded-xl bg-surface-container-highest text-on-surface shadow-2xl flex items-center gap-space-sm">
+<span class="text-[18px]" id="toast-icon">✨</span>
+<span class="font-body-sm text-body-sm font-semibold" id="toast-text">Action Dispatched</span>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const toast = document.getElementById('ops-toast');
+    const toastText = document.getElementById('toast-text');
+    const toastIcon = document.getElementById('toast-icon');
+    let toastTimeout = null;
+
+    function showNotice(emoji, msg) {
+      if (!toast) return;
+      if (toastTimeout) clearTimeout(toastTimeout);
+      
+      toastIcon.textContent = emoji;
+      toastText.textContent = msg;
+      
+      toast.classList.remove('-translate-y-6', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      // Native Telegram WebApp Haptic Feedback emulation
+      if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.HapticFeedback) {
+        window.Telegram.WebApp.HapticFeedback.notificationOccurred('success');
+      }
+
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('-translate-y-6', 'opacity-0');
+      }, 2500);
+    }
+
+    const restartBtn = document.getElementById('btn-soft-restart');
+    if (restartBtn) {
+      restartBtn.addEventListener('click', () => {
+        showNotice('🔄', 'SIGHUP Signal sent. Workers refreshing gracefully.');
+      });
+    }
+
+    const flushBtn = document.getElementById('btn-flush-redis');
+    if (flushBtn) {
+      flushBtn.addEventListener('click', () => {
+        showNotice('🧹', 'Redis cache purged (0 keys dropped, pool hot).');
+      });
+    }
+
+    const pprofBtn = document.getElementById('btn-pprof');
+    if (pprofBtn) {
+      pprofBtn.addEventListener('click', () => {
+        showNotice('📥', 'heap.pprof (64MB) saved to /tmp/telemetry.');
+      });
+    }
+
+    const rotateBtn = document.getElementById('btn-rotate-keys');
+    if (rotateBtn) {
+      rotateBtn.addEventListener('click', () => {
+        showNotice('🔐', 'MTProto AuthKey negotiation in progress with DC 4.');
+      });
+    }
+
+    const syslogBtn = document.getElementById('btn-syslog-tail');
+    if (syslogBtn) {
+      syslogBtn.addEventListener('click', () => {
+        showNotice('📜', 'Attaching stdout tail websocket pipe...');
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/85 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.5)]" data-active-classes="text-primary bg-primary-container/20 rounded-xl"><div class="flex items-center justify-between gap-1 h-20 px-2 overflow-x-auto no-scrollbar"><a class="flex flex-col items-center justify-center min-w-[56px] h-14 p-1 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors" data-path="ops-and-admin" href="#"><span class="text-[18px] leading-tight">🎛️</span><span class="font-label-badge text-[10px] tracking-tight truncate mt-1">Ops</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-14 p-1 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors" data-path="inline-and-commands" href="#"><span class="text-[18px] leading-tight">⚡</span><span class="font-label-badge text-[10px] tracking-tight truncate mt-1">Commands</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-14 p-1 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors" data-path="ai-agent" href="#"><span class="text-[18px] leading-tight">🤖</span><span class="font-label-badge text-[10px] tracking-tight truncate mt-1">AI</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-14 p-1 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors" data-path="mod-guard" href="#"><span class="text-[18px] leading-tight">🛡️</span><span class="font-label-badge text-[10px] tracking-tight truncate mt-1">Guard</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-14 p-1 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors" data-path="music-vc" href="#"><span class="text-[18px] leading-tight">🎵</span><span class="font-label-badge text-[10px] tracking-tight truncate mt-1">Music</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-14 p-1 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors" data-path="arcade" href="#"><span class="text-[18px] leading-tight">🎮</span><span class="font-label-badge text-[10px] tracking-tight truncate mt-1">Arcade</span></a></div></nav></body></html>

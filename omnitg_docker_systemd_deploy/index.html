@@ -1,0 +1,356 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#10131a;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary": "#4cd7f6", "surface-container-high": "#272a31", "surface-container-low": "#191c22", "on-error-container": "#ffdad6", "on-primary-fixed": "#001e2e", "surface-tint": "#86cfff", "primary-container": "#24a1de", "surface-container-lowest": "#0b0e14", "surface-variant": "#32353c", "inverse-primary": "#00658f", "on-background": "#e1e2eb", "surface-dim": "#10131a", "primary-fixed": "#c8e6ff", "secondary-fixed-dim": "#d0bcff", "surface": "#10131a", "surface-bright": "#363940", "on-primary": "#00344c", "tertiary-fixed-dim": "#4cd7f6", "on-secondary": "#3c0091", "outline-variant": "#3e4850", "tertiary-container": "#00a6c2", "on-surface-variant": "#bec8d1", "tertiary-fixed": "#acedff", "primary": "#86cfff", "secondary-container": "#571bc1", "on-secondary-fixed": "#23005c", "on-secondary-fixed-variant": "#5516be", "on-tertiary-fixed-variant": "#004e5c", "on-tertiary-container": "#003540", "surface-container": "#1d2026", "inverse-surface": "#e1e2eb", "surface-container-highest": "#32353c", "on-tertiary-fixed": "#001f26", "secondary-fixed": "#e9ddff", "on-surface": "#e1e2eb", "error": "#ffb4ab", "secondary": "#d0bcff", "outline": "#88929b", "primary-fixed-dim": "#86cfff", "on-primary-fixed-variant": "#004c6d", "on-error": "#690005", "on-tertiary": "#003640", "inverse-on-surface": "#2e3037", "error-container": "#93000a", "on-primary-container": "#00344c", "background": "#10131a", "on-secondary-container": "#c4abff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "0.75rem", "space-lg": "1rem", "margin": "1rem", "gutter": "0.75rem", "space-sm": "0.5rem", "space-xl": "1.5rem", "space-xs": "0.25rem" }, fontFamily: { "display-lg": ["Inter"], "body-sm": ["Inter"], "body-md": ["Inter"], "display-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "headline-md": ["Inter"], "headline-lg": ["Inter"], "label-badge": ["Inter"], "label-code": ["JetBrains Mono"], "body-lg": ["Inter"] }, fontSize: { "display-lg": ["32px", { lineHeight: "38px", fontWeight: "800" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "display-lg-mobile": ["26px", { lineHeight: "32px", fontWeight: "800" }], "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }], "headline-md": ["20px", { lineHeight: "26px", fontWeight: "600" }], "headline-lg": ["24px", { lineHeight: "30px", fontWeight: "700" }], "label-badge": ["11px", { lineHeight: "14px", fontWeight: "700" }], "label-code": ["JetBrains Mono", { lineHeight: "16px", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface text-on-surface flex flex-col min-h-screen selection:bg-primary selection:text-on-primary"><header class="fixed top-0 inset-x-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl pt-safe shadow-[0_4px_24px_rgba(0,0,0,0.4)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-xl bg-surface-container/60 text-on-surface hover:text-primary transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back_ios_new</span></button><div class="flex flex-col min-w-0"><span class="font-label-code text-label-code text-outline tracking-wider uppercase">SYSTEM NODE</span><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Vc Player Details</h1></div></div><div class="flex items-center gap-space-sm shrink-0"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full px-margin pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-10 space-y-space-md">
+<!-- Top Meta Banner / Header Card -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container p-space-md shadow-xl">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="text-[18px]">🚀</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Production Hub</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">OmniTG MTProto &amp; Voice Engine Pipeline</p>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high shrink-0">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-code text-label-code text-tertiary">Go v1.23.2</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant">
+<span class="font-label-code text-label-code text-primary">MTProto v4.2 • TGCalls v2.1</span>
+<span class="font-label-badge text-label-badge uppercase px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container">READY TO SHIP</span>
+</div>
+<!-- Target Selector Pills -->
+<div class="grid grid-cols-4 gap-1 mt-space-md p-1 rounded-lg bg-surface-container-lowest"><button class="flex items-center justify-center gap-1 py-1.5 px-1.5 rounded-md font-body-sm text-body-sm font-semibold transition-all bg-primary-container text-on-primary shadow-sm" id="tabBtn-docker" onclick="switchDeployTab('docker')"><span class="">🐳</span><span class="truncate">Docker</span></button><button class="flex items-center justify-center gap-1 py-1.5 px-1.5 rounded-md font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-all" id="tabBtn-systemd" onclick="switchDeployTab('systemd')"><span class="">⚙️</span><span class="truncate">Systemd</span></button><button class="flex items-center justify-center gap-1 py-1.5 px-1.5 rounded-md font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-all" id="tabBtn-helm" onclick="switchDeployTab('helm')"><span class="">☸️</span><span class="truncate">Helm</span></button><button class="flex items-center justify-center gap-1 py-1.5 px-1.5 rounded-md font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-all" id="tabBtn-fly" onclick="switchDeployTab('fly')"><span class="">🎈</span><span class="truncate">Fly.io</span></button></div>
+</div>
+<!-- Quick Action & Deployment Bundle -->
+<div class="flex flex-col gap-space-xs p-space-md rounded-xl bg-surface-container shadow-md">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span class="font-label-code text-label-code text-on-surface">CI/CD Pipeline: Synced</span>
+</div>
+<span class="font-label-code text-label-code text-outline truncate">commit #9f4e2b1</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-2 mt-1"><button class="flex-1 flex items-center justify-center gap-2 py-2.5 px-space-md rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-body-md text-body-md font-semibold active:scale-95 transition-transform shadow-md" onclick="simulateAction(this, 'Downloading bundle...')"><span class="material-symbols-outlined text-[20px] text-primary">archive</span><span class="">Download .tar.gz</span></button><button class="flex items-center justify-center gap-2 py-2.5 px-space-md rounded-lg bg-primary-container text-on-primary font-body-md text-body-md font-semibold active:scale-95 transition-transform shadow-md hover:brightness-110" onclick="document.getElementById('export-env-section').scrollIntoView({behavior: 'smooth'})"><span class="material-symbols-outlined text-[20px]">bolt</span><span class="truncate">Export .env Config</span><span class="font-label-badge text-label-badge px-2 py-0.5 rounded-full bg-surface-container-lowest text-tertiary ml-1">12 Vars</span></button><button class="w-full flex items-center justify-between py-2.5 px-space-md rounded-lg bg-surface-container-high border border-outline-variant/30 hover:bg-surface-container-highest text-on-surface font-body-md text-body-md font-semibold active:scale-95 transition-all shadow-md" onclick="document.getElementById('github-export-section').scrollIntoView({behavior: 'smooth'})"><div class="flex items-center gap-2"><span class="text-[18px]">🐙</span><span class="font-label-code text-label-code text-on-surface font-semibold">Push &amp; Export to GitHub</span></div><div class="flex items-center gap-1.5"><span class="font-label-badge text-label-badge uppercase px-2 py-0.5 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/30">Auto-Sync</span><span class="material-symbols-outlined text-outline text-[18px]">arrow_forward</span></div></button></div>
+</div>
+<!-- TAB CONTENT 1: Docker & Compose -->
+<div id="github-export-section" class="flex flex-col rounded-xl bg-surface-container p-space-md shadow-xl border border-tertiary/30 space-y-space-md"><div class="flex flex-col gap-2"><div class="flex items-start justify-between gap-space-sm"><div class="flex items-center gap-2 min-w-0"><div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-[20px] shrink-0">🐙</div><div class="flex flex-col min-w-0"><div class="flex items-center gap-2 flex-wrap"><h2 class="font-headline-sm text-headline-sm text-on-surface">GitHub Export &amp; Repo Sync</h2><span class="font-label-badge text-label-badge uppercase px-2 py-0.5 rounded-full bg-primary-container/20 text-primary border border-primary/20">main</span></div><p class="font-body-sm text-body-sm text-on-surface-variant truncate">OAuth Connected: omnitg-bot/core-daemon</p></div></div><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high shrink-0"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-code text-label-code text-tertiary">READY</span></div></div></div><div class="flex flex-col gap-2 p-space-md rounded-xl bg-surface-container-lowest border border-outline-variant/30"><div class="flex items-center justify-between mb-1"><span class="font-label-code text-label-code text-outline uppercase">Export Workflow Pipeline</span><span class="font-label-code text-label-code text-tertiary">Step 2 / 4</span></div><div class="space-y-2"><div class="flex items-start gap-2.5 p-2 rounded-lg bg-surface-container-high/60"><span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">check_circle</span><div class="flex flex-col flex-1 min-w-0"><div class="flex items-center justify-between"><span class="font-label-code text-label-code text-on-surface font-semibold truncate">1. Repo Initialization &amp; Structure</span><span class="font-label-badge text-label-badge text-tertiary uppercase">Done</span></div><span class="font-body-sm text-body-sm text-on-surface-variant">Verified write permissions. Synthesized .gitignore, Makefile, Dockerfile &amp; README.md</span></div></div><div class="flex items-start gap-2.5 p-2 rounded-lg bg-surface-container-high/80 border border-primary/20"><span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5 animate-pulse">sync</span><div class="flex flex-col flex-1 min-w-0"><div class="flex items-center justify-between"><span class="font-label-code text-label-code text-primary font-semibold truncate">2. Secret Sync &amp; GH Secrets Injection</span><span class="font-label-badge text-label-badge px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container uppercase">5/5 Synced</span></div><span class="font-body-sm text-body-sm text-on-surface-variant">Encrypting TG_API_ID, BOT_TOKEN &amp; SESSION_STRING into GitHub Secrets via libsodium/NaCl</span></div></div><div class="flex items-start gap-2.5 p-2 rounded-lg bg-surface-container-high/40"><span class="material-symbols-outlined text-outline text-[18px] shrink-0 mt-0.5">pending</span><div class="flex flex-col flex-1 min-w-0"><div class="flex items-center justify-between"><span class="font-label-code text-label-code text-on-surface font-semibold truncate">3. Workflow CI/CD Dispatch</span><span class="font-label-badge text-label-badge text-outline uppercase">Ready</span></div><span class="font-body-sm text-body-sm text-on-surface-variant">Prepares .github/workflows/deploy.yml with multi-arch Docker build (amd64/arm64)</span></div></div><div class="flex items-start gap-2.5 p-2 rounded-lg bg-surface-container-high/40"><span class="material-symbols-outlined text-outline text-[18px] shrink-0 mt-0.5">radio_button_unchecked</span><div class="flex flex-col flex-1 min-w-0"><div class="flex items-center justify-between"><span class="font-label-code text-label-code text-on-surface font-semibold truncate">4. GHCR Container Registry Hook</span><span class="font-label-badge text-label-badge text-outline uppercase">Standby</span></div><span class="font-body-sm text-body-sm text-on-surface-variant">Connects ghcr.io/omnitg/omni-bot:latest package repository deployment trigger</span></div></div></div></div><div class="flex flex-col gap-2 p-space-md rounded-xl bg-surface-container-lowest border border-outline-variant/30" id="git-branch-selector-wrapper"><div class="flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-primary">fork_right</span><span class="font-label-code text-label-code text-outline uppercase">Target Branch</span></div><span class="font-label-badge text-label-badge px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary flex items-center gap-1 border border-outline-variant/20"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse inline-block"></span>Tracks: origin/main</span></div><div class="grid grid-cols-3 gap-1.5 mt-0.5"><button type="button" class="flex flex-col items-start gap-0.5 p-2 rounded-lg bg-primary-container/20 border border-primary/40 text-left transition-all hover:brightness-110 active:scale-95"><div class="flex items-center gap-1.5 w-full"><span class="w-2 h-2 rounded-full bg-primary inline-block shrink-0"></span><span class="font-label-code text-label-code text-primary font-semibold truncate">main</span><span class="material-symbols-outlined text-[12px] text-primary ml-auto">lock</span></div><span class="font-label-badge text-[11px] text-tertiary truncate uppercase">Production</span></button><button type="button" class="flex flex-col items-start gap-0.5 p-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/20 text-left transition-all active:scale-95"><div class="flex items-center gap-1.5 w-full"><span class="w-2 h-2 rounded-full bg-outline inline-block shrink-0"></span><span class="font-label-code text-label-code text-on-surface-variant font-semibold truncate">staging</span></div><span class="font-label-badge text-[11px] text-outline truncate uppercase">Pre-release</span></button><button type="button" class="flex flex-col items-start gap-0.5 p-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest border border-outline-variant/20 text-left transition-all active:scale-95"><div class="flex items-center gap-1.5 w-full"><span class="w-2 h-2 rounded-full bg-outline inline-block shrink-0"></span><span class="font-label-code text-label-code text-on-surface-variant font-semibold truncate">dev</span></div><span class="font-label-badge text-[11px] text-outline truncate uppercase">Nightly</span></button></div><div class="flex items-center justify-between pt-1 border-t border-outline-variant/20 text-on-surface-variant"><div class="flex items-center gap-1.5 min-w-0"><span class="material-symbols-outlined text-[16px] text-tertiary shrink-0">verified_user</span><span class="font-body-sm text-[12px] text-on-surface-variant truncate">Branch protection verified</span></div><button type="button" class="font-label-code text-[11px] text-primary hover:text-tertiary flex items-center gap-1 shrink-0 transition-colors"><span class="material-symbols-outlined text-[14px]">add_circle</span><span class="">New Branch</span></button></div></div><div class="flex flex-col gap-2.5"><div class="flex flex-col gap-1"><div class="flex items-center justify-between"><label class="font-label-code text-label-code text-outline uppercase">Target Repository</label><span class="font-label-badge text-label-badge px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[12px] text-tertiary">lock</span>Private</span></div><div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest border border-outline-variant/30 font-label-code text-label-code text-primary"><div class="flex items-center gap-2 truncate"><span class="text-outline">github.com/</span><span class="font-semibold">my-org/omnitg-daemon</span></div><button class="material-symbols-outlined text-[16px] text-outline hover:text-on-surface" onclick="copyRaw('github.com/my-org/omnitg-daemon', this)">content_copy</button></div></div><div class="flex flex-col gap-1"><label class="font-label-code text-label-code text-outline uppercase">Commit Message Preset</label><div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest border border-outline-variant/30 font-label-code text-label-code text-on-surface-variant"><span class="truncate">feat(core): auto-export v2.4.9 MTProto engine &amp; compose bundle</span><span class="material-symbols-outlined text-[16px] text-outline">edit</span></div></div></div><div class="flex flex-col gap-2.5 p-space-md rounded-xl bg-surface-container-lowest border border-outline-variant/30" id="commit-gpg-signing-card"><div class="flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-tertiary">verified_user</span><span class="font-label-code text-label-code text-outline uppercase">Commit Signing &amp; GPG</span></div><div class="flex items-center gap-2"><span class="font-label-badge text-label-badge px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary flex items-center gap-1 border border-outline-variant/20"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse inline-block"></span>GPG ENFORCED</span><input checked="" class="w-4 h-4 accent-primary rounded bg-surface-container-highest cursor-pointer" type="checkbox" aria-label="Toggle GPG commit signing"></div></div><div class="flex flex-col gap-1"><label class="font-label-code text-label-code text-outline uppercase">Committer Identity</label><div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-high/60 border border-outline-variant/20"><div class="flex items-center gap-2 min-w-0 truncate"><span class="material-symbols-outlined text-[16px] text-primary shrink-0">smart_toy</span><div class="flex flex-col min-w-0 truncate"><span class="font-label-code text-label-code text-on-surface font-semibold truncate">OmniTG Daemon Bot</span><span class="font-body-sm text-[12px] text-on-surface-variant truncate">&lt;bot@omnitg.internal&gt;</span></div></div><button type="button" class="material-symbols-outlined text-[16px] text-outline hover:text-on-surface shrink-0">edit</button></div></div><div class="flex flex-col gap-1.5 p-2 rounded-lg bg-surface-container-high/40 border border-outline-variant/20"><div class="flex items-center justify-between"><div class="flex items-center gap-1.5 min-w-0"><span class="material-symbols-outlined text-[16px] text-tertiary shrink-0">key</span><span class="font-label-code text-label-code text-primary font-semibold truncate">4A8F92BC10E9D471</span></div><div class="flex items-center gap-1 shrink-0"><span class="font-label-badge text-label-badge uppercase px-1.5 py-0.5 rounded bg-surface-container text-outline border border-outline-variant/20">Ed25519 / 4096-bit</span><button type="button" class="material-symbols-outlined text-[14px] text-outline hover:text-on-surface" onclick="copyRaw('4A8F92BC10E9D471', this)">content_copy</button></div></div><div class="flex flex-col gap-0.5"><span class="font-label-code text-[11px] text-outline uppercase">Fingerprint</span><code class="font-label-code text-[11px] text-on-surface-variant truncate">8F2B 91AA 4C01 77EE 5509 D31B 4A8F 92BC 10E9 D471</code></div><div class="flex items-center justify-between pt-1 border-t border-outline-variant/20"><div class="flex items-center gap-1 text-tertiary font-label-code text-[11px]"><span class="material-symbols-outlined text-[14px]">shield</span><span class="">Verified with GitHub</span></div><span class="font-label-code text-[11px] text-outline">Valid until Nov 2026</span></div></div><div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-high/30 border border-outline-variant/20"><div class="flex items-center gap-1.5 min-w-0 pr-2"><span class="material-symbols-outlined text-[16px] text-secondary shrink-0">lock_clock</span><span class="font-body-sm text-[12px] text-on-surface truncate">Enforce signed commits in branch protection</span></div><input checked="" class="w-4 h-4 accent-primary rounded bg-surface-container-highest cursor-pointer shrink-0" type="checkbox" aria-label="Enforce signed commits in branch protection"></div><div class="grid grid-cols-2 gap-2 pt-0.5"><button type="button" class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-md bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-code text-label-code active:scale-95 transition-all truncate" onclick="simulateAction(this, 'Switching key...')"><span class="material-symbols-outlined text-[14px] text-secondary">vpn_key</span><span class="truncate">Change Key</span></button><button type="button" class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-md bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-code text-label-code active:scale-95 transition-all truncate" onclick="simulateAction(this, 'Exporting .asc...')"><span class="material-symbols-outlined text-[14px] text-tertiary">download</span><span class="truncate">Export Public (.asc)</span></button></div></div><div class="flex flex-col gap-1.5 p-space-md rounded-xl bg-surface-container-lowest border border-outline-variant/30"><div class="flex items-center justify-between"><span class="font-label-code text-label-code text-outline uppercase">Export Manifest Summary (6 Files)</span><span class="font-label-badge text-label-badge text-tertiary uppercase">Packaged</span></div><div class="grid grid-cols-2 gap-1.5 font-label-code text-label-code text-on-surface-variant pt-1"><span class="truncate flex items-center gap-1"><span class="text-primary">•</span> main.go</span><span class="truncate flex items-center gap-1"><span class="text-primary">•</span> go.mod &amp; go.sum</span><span class="truncate flex items-center gap-1"><span class="text-primary">•</span> docker-compose.yml</span><span class="truncate flex items-center gap-1"><span class="text-primary">•</span> fly.toml</span><span class="truncate flex items-center gap-1"><span class="text-primary">•</span> .github/workflows/deploy.yml</span><span class="truncate flex items-center gap-1"><span class="text-primary">•</span> systemd/omnitg.service</span></div></div><div class="flex flex-col gap-2 pt-1"><button class="w-full flex items-center justify-center gap-2 py-3 px-space-md rounded-lg bg-primary-container text-on-primary font-body-md text-body-md font-semibold active:scale-95 transition-all shadow-md hover:brightness-110" onclick="simulateAction(this, 'Pushing to GitHub...')"><span class="material-symbols-outlined text-[20px]">rocket_launch</span><span class="font-semibold">🚀 Push to GitHub Repo (1-Click)</span></button><div class="grid grid-cols-2 gap-2"><button class="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-body-sm text-body-sm active:scale-95 transition-all" onclick="simulateAction(this, 'Opening PAT Settings...')"><span class="material-symbols-outlined text-[16px] text-secondary">key</span><span class="truncate">Manage Token (PAT)</span></button><button class="flex items-center justify-center gap-1.5 py-2 px-2.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-body-sm text-body-sm active:scale-95 transition-all" onclick="simulateAction(this, 'Fetching Actions...')"><span class="material-symbols-outlined text-[16px] text-tertiary">history</span><span class="truncate">Actions Workflow Log</span></button></div></div></div><div class="flex flex-col space-y-space-md" id="view-docker">
+<div class="flex flex-col rounded-xl bg-surface-container overflow-hidden shadow-lg">
+<!-- Card Bar -->
+<div class="flex items-center justify-between px-space-md py-2.5 bg-surface-container-high">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[18px]">terminal</span>
+<span class="font-label-code text-label-code text-on-surface font-semibold truncate">docker-compose.yml</span>
+</div>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-primary font-label-code text-label-code hover:bg-surface-container-lowest transition-colors" onclick="copySnippet('compose-yaml-content', this)">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span class="">Copy</span>
+</button>
+</div>
+<!-- Code Terminal View -->
+<div class="p-space-md bg-surface-container-lowest overflow-x-auto text-left font-label-code text-label-code leading-relaxed">
+<pre class="text-on-surface-variant" id="compose-yaml-content"><span class="text-secondary">version:</span> <span class="text-tertiary">'3.8'</span>
+<span class="text-secondary">services:</span>
+  <span class="text-primary font-semibold">omni-bot:</span>
+    <span class="text-secondary">image:</span> omnitg:latest
+    <span class="text-secondary">restart:</span> always
+    <span class="text-secondary">environment:</span>
+      - ENV=production
+      - TG_API_ID=${TG_API_ID}
+    <span class="text-secondary">ports:</span>
+      - <span class="text-tertiary">"10000-10050:10000-10050/udp"</span> <span class="text-outline"># TGCalls VC</span>
+    <span class="text-secondary">depends_on:</span>
+      - redis
+      - postgres
+  <span class="text-primary font-semibold">redis:</span>
+    <span class="text-secondary">image:</span> redis:7-alpine
+    <span class="text-secondary">restart:</span> always
+  <span class="text-primary font-semibold">postgres:</span>
+    <span class="text-secondary">image:</span> postgres:16-alpine
+    <span class="text-secondary">environment:</span>
+      POSTGRES_DB: omnitg_db</pre>
+</div>
+<!-- Telemetry Meta -->
+<div class="flex items-center justify-between px-space-md py-2 bg-surface-container-high/60">
+<span class="font-label-code text-label-code text-on-surface-variant flex items-center gap-1">
+<span class="">🪶</span> Image: <b class="text-on-surface">34.2 MB</b>
+</span>
+<span class="font-label-code text-label-code text-tertiary">linux/amd64 + arm64</span>
+</div>
+</div>
+<!-- Quick Run Command -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container shadow-md">
+<div class="flex flex-col min-w-0 mr-2">
+<span class="font-label-code text-label-code text-outline uppercase">Quick Build Command</span>
+<code class="font-label-code text-label-code text-primary font-semibold truncate mt-0.5">docker compose up -d --build</code>
+</div>
+<button class="h-9 w-9 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface shrink-0 active:scale-95 transition-transform" onclick="copyRaw('docker compose up -d --build', this)">
+<span class="material-symbols-outlined text-[18px]">copy_all</span>
+</button>
+</div>
+</div>
+<!-- TAB CONTENT 2: Systemd Daemon -->
+<div class="hidden flex-col space-y-space-md" id="view-systemd">
+<div class="flex flex-col rounded-xl bg-surface-container overflow-hidden shadow-lg">
+<div class="flex items-center justify-between px-space-md py-2.5 bg-surface-container-high">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[18px]">settings_system_daydream</span>
+<span class="font-label-code text-label-code text-on-surface truncate">/etc/systemd/system/omnitg.service</span>
+</div>
+<button class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-secondary font-label-code text-label-code hover:bg-surface-container-lowest transition-colors" onclick="copySnippet('systemd-unit-content', this)">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span class="">Copy</span>
+</button>
+</div>
+<div class="p-space-md bg-surface-container-lowest overflow-x-auto text-left font-label-code text-label-code leading-relaxed">
+<pre class="text-on-surface-variant" id="systemd-unit-content"><span class="text-primary">[Unit]</span>
+<span class="text-secondary">Description</span>=OmniTG MTProto Voice Daemon
+<span class="text-secondary">After</span>=network.target redis.service
+
+<span class="text-primary">[Service]</span>
+<span class="text-secondary">Type</span>=simple
+<span class="text-secondary">User</span>=omni
+<span class="text-secondary">ExecStart</span>=/usr/local/bin/omnitg --config /etc/omnitg/config.yaml
+<span class="text-secondary">Restart</span>=always
+<span class="text-secondary">RestartSec</span>=5s
+<span class="text-secondary">LimitNOFILE</span>=65535
+
+<span class="text-primary">[Install]</span>
+<span class="text-secondary">WantedBy</span>=multi-user.target</pre>
+</div>
+</div>
+<!-- Commands Cheat Badges -->
+<div class="flex flex-col gap-2 p-space-md rounded-xl bg-surface-container shadow-md">
+<span class="font-label-code text-label-code text-outline uppercase mb-1">Daemon CLI Controls</span>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-high active:bg-surface-container-highest cursor-pointer transition-colors" onclick="copyRaw('sudo systemctl daemon-reload', this)">
+<code class="font-label-code text-label-code text-primary truncate">sudo systemctl daemon-reload</code>
+<span class="material-symbols-outlined text-[16px] text-outline">content_copy</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-high active:bg-surface-container-highest cursor-pointer transition-colors" onclick="copyRaw('sudo systemctl enable --now omnitg', this)">
+<code class="font-label-code text-label-code text-tertiary truncate">sudo systemctl enable --now omnitg</code>
+<span class="material-symbols-outlined text-[16px] text-outline">content_copy</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-high active:bg-surface-container-highest cursor-pointer transition-colors" onclick="copyRaw('journalctl -u omnitg -f', this)">
+<code class="font-label-code text-label-code text-secondary truncate">journalctl -u omnitg -f</code>
+<span class="material-symbols-outlined text-[16px] text-outline">content_copy</span>
+</div>
+</div>
+</div>
+<!-- TAB CONTENT 3: Helm Chart preview -->
+<div class="hidden flex-col space-y-space-md" id="view-helm">
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col items-center text-center shadow-lg">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center mb-space-sm text-secondary">
+<span class="material-symbols-outlined text-[28px]">anchor</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">Kubernetes Helm Registry</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mb-space-md">Ready for high-availability multi-pod cluster deployment with StatefulSet Redis session locks.</p>
+<div class="w-full flex items-center justify-between p-2.5 rounded-lg bg-surface-container-lowest font-label-code text-label-code text-primary">
+<span class="truncate">helm repo add omnitg https://charts.omnitg.io</span>
+<button class="material-symbols-outlined text-[18px] text-outline hover:text-on-surface ml-2" onclick="copyRaw('helm repo add omnitg https://charts.omnitg.io', this)">content_copy</button>
+</div>
+</div>
+</div><div class="hidden flex-col space-y-space-md" id="view-fly"><div class="flex flex-col rounded-xl bg-surface-container overflow-hidden shadow-lg"><div class="flex items-center justify-between px-space-md py-2.5 bg-surface-container-high"><div class="flex items-center gap-2 min-w-0"><span class="material-symbols-outlined text-primary text-[18px]">flight_takeoff</span><span class="font-label-code text-label-code text-on-surface font-semibold truncate">fly.toml</span></div><button class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-primary font-label-code text-label-code hover:bg-surface-container-lowest transition-colors" onclick="copySnippet('fly-toml-content', this)"><span class="material-symbols-outlined text-[14px]">content_copy</span><span class="">Copy</span></button></div><div class="p-space-md bg-surface-container-lowest overflow-x-auto text-left font-label-code text-label-code leading-relaxed"><pre class="text-on-surface-variant" id="fly-toml-content"><span class="text-secondary">app</span> = <span class="text-tertiary">"omnitg-daemon"</span>
+<span class="text-secondary">primary_region</span> = <span class="text-tertiary">"ams"</span>
+
+<span class="text-primary font-semibold">[build]</span>
+  <span class="text-secondary">image</span> = <span class="text-tertiary">"omnitg:latest"</span>
+
+<span class="text-primary font-semibold">[env]</span>
+  <span class="text-secondary">ENV</span> = <span class="text-tertiary">"production"</span>
+
+<span class="text-primary font-semibold">[[vm]]</span>
+  <span class="text-secondary">size</span> = <span class="text-tertiary">"shared-cpu-2x"</span>
+  <span class="text-secondary">memory</span> = <span class="text-tertiary">"1024mb"</span>
+
+<span class="text-primary font-semibold">[[services]]</span>
+  <span class="text-secondary">protocol</span> = <span class="text-tertiary">"udp"</span>
+  <span class="text-secondary">internal_schema</span> = <span class="text-tertiary">"udp"</span>
+  <span class="text-primary font-semibold">[[services.ports]]</span>
+    <span class="text-secondary">port</span> = <span class="text-tertiary">10000</span>
+    <span class="text-secondary">end_port</span> = <span class="text-tertiary">10050</span> <span class="text-outline"># WebRTC / TGCalls audio</span>
+
+<span class="text-primary font-semibold">[[services.http_checks]]</span>
+  <span class="text-secondary">interval</span> = <span class="text-tertiary">"15s"</span>
+  <span class="text-secondary">path</span> = <span class="text-tertiary">"/healthz"</span></pre></div><div class="flex items-center justify-between px-space-md py-2 bg-surface-container-high/60"><span class="font-label-code text-label-code text-on-surface-variant flex items-center gap-1"><span class="">🎈</span> Edge: <b class="text-on-surface">Global Anycast UDP</b></span><span class="font-label-code text-label-code text-tertiary">WireGuard Peer Mesh</span></div></div><div class="flex items-center justify-between p-space-md rounded-xl bg-surface-container shadow-md"><div class="flex flex-col min-w-0 mr-2"><span class="font-label-code text-label-code text-outline uppercase">Flyctl 1-Click Launch</span><code class="font-label-code text-label-code text-primary font-semibold truncate mt-0.5">fly launch --copy-config &amp;&amp; fly deploy</code></div><button class="h-9 w-9 flex items-center justify-center rounded-lg bg-surface-container-high text-on-surface shrink-0 active:scale-95 transition-transform" onclick="copyRaw('fly launch --copy-config &amp;&amp; fly deploy', this)"><span class="material-symbols-outlined text-[18px]">copy_all</span></button></div><div class="flex flex-col gap-2 p-space-md rounded-xl bg-surface-container shadow-md"><span class="font-label-code text-label-code text-outline uppercase mb-1">Cloud Deploy Targets</span><div class="grid grid-cols-2 gap-2"><button class="flex items-center justify-center gap-1.5 py-2 px-space-md rounded-lg bg-primary-container text-on-primary font-body-sm text-body-sm font-semibold shadow-sm hover:brightness-110 active:scale-95 transition-all" onclick="simulateAction(this, 'Deploying...')"><span class="">🚀</span><span class="">Deploy to Fly.io</span></button><button class="flex items-center justify-center gap-1.5 py-2 px-space-md rounded-lg bg-surface-container-high text-on-surface font-body-sm text-body-sm hover:bg-surface-container-highest active:scale-95 transition-all" onclick="simulateAction(this, 'Connecting...')"><span class="">🚂</span><span class="">Railway</span></button><button class="flex items-center justify-center gap-1.5 py-2 px-space-md rounded-lg bg-surface-container-high text-on-surface font-body-sm text-body-sm hover:bg-surface-container-highest active:scale-95 transition-all" onclick="simulateAction(this, 'Connecting...')"><span class="">⚡</span><span class="">Koyeb</span></button><button class="flex items-center justify-center gap-1.5 py-2 px-space-md rounded-lg bg-surface-container-high text-on-surface font-body-sm text-body-sm hover:bg-surface-container-highest active:scale-95 transition-all" onclick="simulateAction(this, 'Connecting...')"><span class="">🖥️</span><span class="">Direct VPS</span></button></div></div></div>
+<!-- Secret Environment Variables Vault -->
+<div id="export-env-section" class="flex flex-col rounded-xl bg-surface-container p-space-md shadow-xl border border-primary/20 space-y-space-md"><div class="flex flex-col gap-2"><div class="flex items-start justify-between gap-space-sm"><div class="flex items-center gap-2 min-w-0"><div class="w-9 h-9 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary shrink-0"><span class="material-symbols-outlined text-[20px]">description</span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-2"><h2 class="font-headline-sm text-headline-sm text-on-surface">Environment Variables</h2><span class="font-label-badge text-label-badge uppercase px-2 py-0.5 rounded-full bg-tertiary/10 text-tertiary border border-tertiary/30">.env.prod</span></div><p class="font-body-sm text-body-sm text-on-surface-variant truncate">12 keys configured for OmniTG Voice Core &amp; WebRTC engine</p></div></div><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high shrink-0"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-code text-label-code text-tertiary">SYNCED</span></div></div><div class="flex flex-wrap items-center gap-2 pt-1"><button class="flex-1 sm:flex-none flex items-center justify-center gap-1.5 py-2 px-space-md rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-semibold hover:brightness-110 active:scale-95 transition-all shadow-sm" onclick="copySnippet('env-code-display', this)"><span class="material-symbols-outlined text-[18px]">content_copy</span><span class="">Copy All</span></button><button class="flex-1 sm:flex-none flex items-center justify-center gap-1.5 py-2 px-space-md rounded-lg bg-surface-container-high text-on-surface font-body-sm text-body-sm hover:bg-surface-container-highest active:scale-95 transition-all" onclick="simulateAction(this, 'Exporting .env...')"><span class="material-symbols-outlined text-[18px] text-tertiary">download</span><span class="">Download .env</span></button><button id="btn-mask-toggle" class="flex items-center justify-center gap-1.5 py-2 px-space-md rounded-lg bg-surface-container-high text-on-surface font-body-sm text-body-sm hover:bg-surface-container-highest active:scale-95 transition-all" onclick="toggleEnvMasking(this)"><span class="material-symbols-outlined text-[18px] text-secondary">visibility</span><span class="">Mask Secrets</span></button><button class="flex items-center justify-center gap-1.5 py-2 px-space-md rounded-lg bg-surface-container-high text-on-surface font-body-sm text-body-sm hover:bg-surface-container-highest active:scale-95 transition-all" onclick="simulateAction(this, 'Syncing Vault...')"><span class="material-symbols-outlined text-[18px] text-primary">sync</span><span class="truncate">Sync Vault</span></button></div></div><div class="grid grid-cols-4 gap-1 p-1 rounded-lg bg-surface-container-lowest"><button id="envTab-dotenv" class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-md font-body-sm text-body-sm font-semibold transition-all bg-primary-container text-on-primary shadow-sm" onclick="switchEnvFormat('dotenv')"><span class="truncate">.env</span></button><button id="envTab-docker" class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-md font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-all" onclick="switchEnvFormat('docker')"><span class="truncate">Docker List</span></button><button id="envTab-json" class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-md font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-all" onclick="switchEnvFormat('json')"><span class="truncate">JSON</span></button><button id="envTab-shell" class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-md font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-all" onclick="switchEnvFormat('shell')"><span class="truncate">Shell Export</span></button></div><div class="flex flex-col rounded-xl bg-surface-container-lowest overflow-hidden border border-outline-variant/30"><div class="flex items-center justify-between px-space-md py-2 bg-surface-container-high/80 border-b border-outline-variant/20"><div class="flex items-center gap-2 font-label-code text-label-code text-on-surface-variant"><span class="w-2.5 h-2.5 rounded-full bg-error/70 inline-block"></span><span class="w-2.5 h-2.5 rounded-full bg-tertiary/70 inline-block"></span><span class="w-2.5 h-2.5 rounded-full bg-primary/70 inline-block"></span><span class="ml-2 text-on-surface font-semibold" id="env-format-label">production.env</span></div><div class="flex items-center gap-2"><span class="font-label-badge text-label-badge text-outline">1.4 KB</span></div></div><div class="p-space-md overflow-x-auto text-left font-label-code text-label-code leading-relaxed max-h-96"><pre id="env-code-display" class="text-on-surface-variant"><span class="text-outline"># --- TELEGRAM MTPROTO CORE ---</span>
+<span class="text-secondary">TG_API_ID</span>=<span class="text-tertiary">24981042</span>
+<span class="text-secondary">TG_API_HASH</span>=<span class="text-tertiary env-secret" data-raw="9f4e2b109af084bc3e8271e83ae4">9f4e2••••••••••••••••3ae4</span>
+<span class="text-secondary">BOT_TOKEN</span>=<span class="text-tertiary env-secret" data-raw="710283921:AAHk98xKLsd823_192-mKQ">710283921:AAH••••••••••••mKQ</span>
+<span class="text-secondary">SESSION_STRING_DC4</span>=<span class="text-tertiary env-secret" data-raw="1BjwK18sAAXU923m0923uJksdf89234jsdf_DC4_TEST_TOKEN">1BjwK18sAA...[352 B]</span>
+<span class="text-secondary">TG_DC_ID</span>=<span class="text-tertiary">4</span>
+<span class="text-secondary">TG_WORKER_ROUTINES</span>=<span class="text-tertiary">64</span>
+
+<span class="text-outline"># --- WEBRTC &amp; TGCALLS VOICE STREAMER ---</span>
+<span class="text-secondary">TGCALLS_AUDIO_BITRATE</span>=<span class="text-tertiary">320000</span>
+<span class="text-secondary">TGCALLS_UDP_PORT_MIN</span>=<span class="text-tertiary">10000</span>
+<span class="text-secondary">TGCALLS_UDP_PORT_MAX</span>=<span class="text-tertiary">10050</span>
+<span class="text-secondary">FFMPEG_AUDIO_BUFFER_MS</span>=<span class="text-tertiary">200</span>
+
+<span class="text-outline"># --- AI ENGINES &amp; LLM INTEGRATION ---</span>
+<span class="text-secondary">ANTHROPIC_API_KEY</span>=<span class="text-tertiary env-secret" data-raw="sk-ant-api03-9A923984023kdjfsdf8">sk-ant-api03-••••••••••••</span>
+<span class="text-secondary">GEMINI_API_KEY</span>=<span class="text-tertiary env-secret" data-raw="AIzaSyD98320492834jdfsfjsdf">AIzaSy••••••••••••••••</span>
+<span class="text-secondary">AI_MAX_CONTEXT_TOKENS</span>=<span class="text-tertiary">32000</span>
+
+<span class="text-outline"># --- DATABASE &amp; REDIS INFRASTRUCTURE ---</span>
+<span class="text-secondary">DATABASE_URL</span>=<span class="text-tertiary env-secret" data-raw="postgres://omnitg:securepass@postgres:5432/omnitg_db?sslmode=disable">postgres://omnitg:••••••••@postgres:5432/omnitg_db?sslmode=disable</span>
+<span class="text-secondary">REDIS_URL</span>=<span class="text-tertiary env-secret" data-raw="redis://:authpass@redis:6379/0">redis://:••••••••@redis:6379/0</span>
+<span class="text-secondary">APP_ENV</span>=<span class="text-tertiary">production</span>
+<span class="text-secondary">LOG_LEVEL</span>=<span class="text-tertiary">info</span>
+<span class="text-secondary">METRICS_PORT</span>=<span class="text-tertiary">9090</span></pre></div></div><div class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-high/60 border border-outline-variant/30 text-on-surface-variant"><span class="material-symbols-outlined text-tertiary text-[18px] shrink-0">shield_lock</span><span class="font-body-sm text-body-sm">AES-256 GCM encrypted at rest. Never commit <code class="text-primary font-label-code">.env</code> files to public Git repositories.</span></div></div><div class="flex flex-col rounded-xl bg-surface-container p-space-md shadow-md">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="text-[18px]">🔐</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Secret Vault</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-badge text-label-badge text-outline uppercase">AES-256</span>
+<input checked="" class="w-4 h-4 accent-primary rounded bg-surface-container-highest cursor-pointer" id="vault-toggle" type="checkbox">
+</div>
+</div>
+<div class="space-y-2">
+<!-- Key 1 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-high">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-label-code text-label-code text-primary font-semibold">TG_API_ID / HASH</span>
+<span class="font-label-code text-label-code text-on-surface-variant truncate" id="secret-tgapi">2498••••••••••••••••3ae4</span>
+</div>
+<button class="p-1.5 rounded bg-surface-container text-on-surface-variant hover:text-primary" onclick="toggleMask('secret-tgapi', '2498103:9af084bc3e8271e83ae4', this)">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+<!-- Key 2 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-high">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-label-code text-label-code text-secondary font-semibold">BOT_TOKEN</span>
+<span class="font-label-code text-label-code text-on-surface-variant truncate" id="secret-bottoken">710283921:AAH••••••••••••mKQ</span>
+</div>
+<button class="p-1.5 rounded bg-surface-container text-on-surface-variant hover:text-secondary" onclick="toggleMask('secret-bottoken', '710283921:AAHk98xKLsd823_192-mKQ', this)">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+<!-- Key 3 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-high">
+<div class="flex flex-col min-w-0 pr-2">
+<span class="font-label-code text-label-code text-tertiary font-semibold">SESSION_STRING_DC4</span>
+<span class="font-label-code text-label-code text-outline truncate">1BjwK18sAA...[352 B]</span>
+</div>
+<button class="p-1.5 rounded bg-surface-container text-on-surface-variant hover:text-tertiary" onclick="copyRaw('1BjwK18sAAXU923m0923uJksdf89234jsdf_DC4_TEST_TOKEN', this)">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Hidden string template for copying -->
+<textarea class="hidden" id="env-template">TG_API_ID=2498103
+TG_API_HASH=9af084bc3e8271e83ae4
+BOT_TOKEN=710283921:AAHk98xKLsd823_192-mKQ
+SESSION_STRING_DC4=1BjwK18sAAXU923m0923uJksdf89234jsdf
+DATABASE_URL=postgres://omni:securepass@postgres:5432/omnitg_db?sslmode=disable
+REDIS_URL=redis://redis:6379/0
+VC_PORT_MIN=10000
+VC_PORT_MAX=10050</textarea>
+<!-- Pre-Flight Checklist -->
+<div class="flex flex-col rounded-xl bg-surface-container p-space-md shadow-md">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">checklist_rtl</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Pre-Flight Audit</span>
+</div>
+<span class="font-label-code text-label-code text-tertiary">3 / 4 PASS</span>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-lowest">
+<span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface flex-1">MTProto DC Session Auth Verified</span>
+</div>
+<div class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-lowest">
+<span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface flex-1">FFmpeg &amp; libopus CGo bindings bundled</span>
+</div>
+<div class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-lowest">
+<span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface flex-1">Audio ports 10000-10050/udp mapped</span>
+</div>
+<div class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-lowest">
+<span class="material-symbols-outlined text-error text-[18px]">warning</span>
+<div class="flex flex-col flex-1 min-w-0">
+<span class="font-body-sm text-body-sm text-on-surface">Rate Limit Webhook missing</span>
+<span class="font-label-code text-label-code text-outline">Fallback to long-polling enabled</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function switchDeployTab(tabKey) {
+    const tabs = ['docker', 'systemd', 'helm'];
+    tabs.forEach(t => {
+      const view = document.getElementById('view-' + t);
+      const btn = document.getElementById('tabBtn-' + t);
+      if (t === tabKey) {
+        view.classList.remove('hidden');
+        view.classList.add('flex');
+        btn.className = 'flex items-center justify-center gap-1 py-1.5 px-2 rounded-md font-body-sm text-body-sm font-semibold transition-all bg-primary-container text-on-primary shadow-sm';
+      } else {
+        view.classList.add('hidden');
+        view.classList.remove('flex');
+        btn.className = 'flex items-center justify-center gap-1 py-1.5 px-2 rounded-md font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-all';
+      }
+    });
+  }
+
+  function copyRaw(text, el) {
+    navigator.clipboard.writeText(text).then(() => {
+      showCopiedFeedback(el);
+    }).catch(() => {});
+  }
+
+  function copySnippet(elementId, btnEl) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+    const text = el.innerText || el.value;
+    navigator.clipboard.writeText(text).then(() => {
+      showCopiedFeedback(btnEl);
+    }).catch(() => {});
+  }
+
+  function showCopiedFeedback(btn) {
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-tertiary">check</span>';
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+    }, 1400);
+  }
+
+  function toggleMask(id, realValue, btn) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (el.getAttribute('data-revealed') === 'true') {
+      el.innerText = realValue.substring(0, 4) + '••••••••••••••••' + realValue.slice(-4);
+      el.setAttribute('data-revealed', 'false');
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">visibility</span>';
+    } else {
+      el.innerText = realValue;
+      el.setAttribute('data-revealed', 'true');
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">visibility_off</span>';
+    }
+  }
+
+  function simulateAction(btn, tempText) {
+    const oldHtml = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">sync</span><span>' + tempText + '</span>';
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">download_done</span><span>Saved to Downloads</span>';
+      setTimeout(() => {
+        btn.innerHTML = oldHtml;
+      }, 2000);
+    }, 1000);
+  }
+</script></main></body></html>

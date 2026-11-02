@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary-container": "#00344c", "primary-fixed-dim": "#86cfff", "surface-tint": "#86cfff", "on-tertiary-container": "#003540", "primary-container": "#24a1de", "on-surface-variant": "#bec8d1", "on-tertiary-fixed-variant": "#004e5c", "on-error-container": "#ffdad6", "error": "#ffb4ab", "surface-bright": "#363940", "tertiary-container": "#00a6c2", "on-secondary-fixed": "#23005c", "on-tertiary-fixed": "#001f26", "primary-fixed": "#c8e6ff", "secondary": "#d0bcff", "primary": "#86cfff", "surface-container-lowest": "#0b0e14", "on-secondary-fixed-variant": "#5516be", "inverse-primary": "#00658f", "secondary-container": "#571bc1", "error-container": "#93000a", "surface": "#10131a", "surface-dim": "#10131a", "surface-variant": "#32353c", "inverse-on-surface": "#2e3037", "on-surface": "#e1e2eb", "on-error": "#690005", "on-background": "#e1e2eb", "on-tertiary": "#003640", "outline": "#88929b", "tertiary-fixed-dim": "#4cd7f6", "surface-container-low": "#191c22", "secondary-fixed-dim": "#d0bcff", "surface-container": "#1d2026", "secondary-fixed": "#e9ddff", "surface-container-highest": "#32353c", "on-primary": "#00344c", "tertiary-fixed": "#acedff", "surface-container-high": "#272a31", "on-secondary-container": "#c4abff", "on-primary-fixed": "#001e2e", "outline-variant": "#3e4850", "tertiary": "#4cd7f6", "on-primary-fixed-variant": "#004c6d", "inverse-surface": "#e1e2eb", "on-secondary": "#3c0091", "background": "#10131a" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-lg": "1rem", "space-md": "0.75rem", "space-xl": "1.5rem", "margin": "1rem", "space-sm": "0.5rem", "gutter": "0.75rem", "space-xs": "0.25rem" }, fontFamily: { "body-lg": ["Inter"], "body-md": ["Inter"], "display-lg-mobile": ["Inter"], "label-code": ["JetBrains Mono"], "headline-lg": ["Inter"], "display-lg": ["Inter"], "headline-md": ["Inter"], "body-sm": ["Inter"], "label-badge": ["Inter"], "headline-sm": ["Inter"] }, fontSize: { "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "display-lg-mobile": ["26px", { lineHeight: "32px", fontWeight: "800" }], "label-code": ["12px", { lineHeight: "16px", fontWeight: "500" }], "headline-lg": ["24px", { lineHeight: "30px", fontWeight: "700" }], "display-lg": ["32px", { lineHeight: "38px", fontWeight: "800" }], "headline-md": ["20px", { lineHeight: "26px", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }], "label-badge": ["11px", { lineHeight: "14px", fontWeight: "700" }], "headline-sm": ["18px", { lineHeight: "24px", fontWeight: "600" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;background-color:#10131a;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen antialiased select-none"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-sm flex items-center justify-between max-w-[480px] mx-auto"><div class="flex items-center gap-space-xs"><button aria-label="Go Back" class="w-11 h-11 flex items-center justify-center rounded-xl text-on-surface hover:text-primary transition-colors hover:bg-surface-container-high" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span></button><div class="flex flex-col"><div class="flex items-center gap-space-xs"><h1 class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface truncate max-w-[190px]">Node Diagnostics</h1><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span></div><div class="flex items-center gap-1.5"><span class="font-label-badge text-label-badge text-tertiary uppercase tracking-wider">Health &amp; Node Sentinel</span><span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-tertiary-container/30 text-tertiary text-[10px] font-label-code">ACTIVE</span></div></div></div><div class="flex items-center gap-space-xs"><button aria-label="Node Actions" class="w-11 h-11 flex items-center justify-center rounded-xl text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container-high"><span class="material-symbols-outlined text-[20px]">restart_alt</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_12px_rgba(134,207,255,0.35)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface max-w-[480px] mx-auto"><div class="flex flex-col w-full px-space-md pb-space-xl gap-space-md">
+<!-- Master System Vitals & Health Score Hero -->
+<section class="w-full rounded-xl bg-surface-container p-space-md shadow-xl relative overflow-hidden">
+<!-- Ambient Neon Pulse Glow -->
+<div class="absolute -top-12 -right-12 w-44 h-44 rounded-full bg-primary/10 blur-2xl pointer-events-none"></div>
+<div class="absolute -bottom-10 -left-10 w-36 h-36 rounded-full bg-tertiary/10 blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-md">
+<!-- Title & Subtitle Badge -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Daemon Vitals</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-container/20 text-tertiary">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-badge text-label-badge tracking-wider">ALL PROBES GREEN</span>
+</div>
+</div>
+<!-- Health Score Circular Gauge & Metric Highlight -->
+<div class="flex items-center gap-space-md bg-surface-container-lowest p-space-md rounded-xl">
+<div class="relative w-24 h-24 shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-variant" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-tertiary drop-shadow-[0_0_8px_rgba(76,215,246,0.6)]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="99.98, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-label-code text-label-code text-tertiary">99.98%</span>
+<span class="font-label-badge text-[9px] text-on-surface-variant uppercase tracking-tighter">Score</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">SYSTEM OPTIMAL</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">OmniTG MTProto &amp; WebRTC kernel running at peak throughput.</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-code text-label-code text-primary">v2.4.9-cgo-prod</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-code text-label-code text-on-surface-variant">arm64-linux</span>
+</div>
+</div>
+</div>
+<!-- Quick Metrics Ribbon -->
+<div class="grid grid-cols-3 gap-space-xs">
+<div class="flex flex-col bg-surface-container-high p-2 rounded-lg text-center">
+<span class="font-label-badge text-label-badge text-on-surface-variant uppercase">E2E Latency</span>
+<span class="font-label-code text-body-md text-tertiary font-bold mt-0.5">16ms</span>
+</div>
+<div class="flex flex-col bg-surface-container-high p-2 rounded-lg text-center">
+<span class="font-label-badge text-label-badge text-on-surface-variant uppercase">GC Overhead</span>
+<span class="font-label-code text-body-md text-primary font-bold mt-0.5">0.18%</span>
+</div>
+<div class="flex flex-col bg-surface-container-high p-2 rounded-lg text-center">
+<span class="font-label-badge text-label-badge text-on-surface-variant uppercase">Node Uptime</span>
+<span class="font-label-code text-body-md text-secondary font-bold mt-0.5 truncate">42d 14h</span>
+</div>
+</div>
+<!-- Radar Trigger Action -->
+<button class="w-full h-12 rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-body-md font-semibold flex items-center justify-center gap-space-xs shadow-[0_4px_18px_rgba(36,161,222,0.35)] active:scale-[0.98] transition-transform" id="triggerProbeBtn" onclick="runProbeSequence()">
+<span class="material-symbols-outlined text-[20px]" id="probeIcon">radar</span>
+<span id="probeLabel">Trigger Full Health Probe</span>
+</button>
+</div>
+</section>
+<!-- Telegram MTProto Data Center (DC) Latency Matrix -->
+<section class="w-full rounded-xl bg-surface-container p-space-md shadow-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px]">hub</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Telegram DC Matrix</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+<span class="font-label-code text-label-code">5 Nodes</span>
+</div>
+</div>
+<!-- DC List Grid -->
+<div class="flex flex-col gap-space-xs mt-1">
+<!-- DC 1 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-xs min-w-0">
+<div class="w-7 h-7 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-label-code text-label-code font-bold">1</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium truncate">DC 1 • Miami (US)</span>
+<span class="font-label-code text-[10px] text-on-surface-variant">149.154.175.50:443</span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-code text-label-code text-tertiary">78ms</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface text-[10px] font-label-code">Connected</span>
+</div>
+</div>
+<!-- DC 2 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-xs min-w-0">
+<div class="w-7 h-7 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-label-code text-label-code font-bold">2</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium truncate">DC 2 • Amsterdam (NL)</span>
+<span class="font-label-code text-[10px] text-tertiary">Primary Auth Session</span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-code text-label-code text-tertiary font-bold">14ms</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/30 text-tertiary text-[10px] font-label-code">Auth Primary</span>
+</div>
+</div>
+<!-- DC 3 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-xs min-w-0">
+<div class="w-7 h-7 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-label-code text-label-code font-bold">3</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium truncate">DC 3 • Miami (US)</span>
+<span class="font-label-code text-[10px] text-on-surface-variant">149.154.175.100:443</span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-code text-label-code text-on-surface-variant">82ms</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant text-[10px] font-label-code">Standby</span>
+</div>
+</div>
+<!-- DC 4 - Active Voice Tunnel Neon Highlight -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-high shadow-[0_0_14px_rgba(76,215,246,0.18)]">
+<div class="flex items-center gap-space-xs min-w-0">
+<div class="w-7 h-7 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-label-code text-label-code font-bold">4</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-body-sm text-body-sm text-on-surface font-bold truncate">DC 4 • Amsterdam (NL)</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-ping"></span>
+</div>
+<span class="font-label-code text-[10px] text-primary">Active Session • Voice Tunnel</span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-code text-label-code text-primary font-bold">12ms</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container/30 text-primary-fixed-dim text-[10px] font-label-code font-semibold">Live WebRTC</span>
+</div>
+</div>
+<!-- DC 5 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-xs min-w-0">
+<div class="w-7 h-7 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-label-code text-label-code font-bold">5</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm text-on-surface font-medium truncate">DC 5 • Singapore (SG)</span>
+<span class="font-label-code text-[10px] text-on-surface-variant">91.108.56.165:443</span>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-code text-label-code text-on-surface-variant">142ms</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant text-[10px] font-label-code">Standby</span>
+</div>
+</div>
+</div>
+<!-- Ephemeral Diffie-Hellman Handshake Info Box -->
+<div class="mt-1 p-2.5 rounded-lg bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">key</span>
+<div class="flex flex-col">
+<span class="font-label-badge text-label-badge text-on-surface uppercase">DH-2048 Session Rekey</span>
+<span class="font-label-code text-[10px] text-secondary-fixed-dim">Expires in 03h 41m 12s</span>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded bg-secondary-container/40 text-on-secondary-container text-label-code font-label-code active:scale-95 transition-transform" onclick="rekeySessionNotice(this)">
+        Probe Re-Key
+      </button>
+</div>
+</section>
+<!-- Subsystem Micro-Probes & Diagnostic Checklist -->
+<section class="w-full rounded-xl bg-surface-container p-space-md shadow-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">checklist_rtl</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Subsystem Probes</span>
+</div>
+<span class="font-label-code text-label-code text-tertiary">6/6 Passed</span>
+</div>
+<div class="flex flex-col gap-space-xs mt-1">
+<!-- Probe 1: Go Runtime -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">memory</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Go Runtime &amp; Goroutine Sentinel</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/30 text-tertiary text-label-badge font-label-badge">PASS</span>
+</div>
+<div class="flex items-center justify-between font-label-code text-label-code text-on-surface-variant">
+<span>Live routines: <strong class="text-on-surface">142</strong></span>
+<span>Leaked: <strong class="text-tertiary">0</strong></span>
+<span>Heap: <strong class="text-on-surface">64.2 / 512MB</strong></span>
+</div>
+<!-- Micro Progress Bar -->
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 12.5%"></div>
+</div>
+</div>
+<!-- Probe 2: TGCalls WebRTC -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]">graphic_eq</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">TGCalls WebRTC Audio &amp; Loss</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/30 text-tertiary text-label-badge font-label-badge">OPTIMAL</span>
+</div>
+<div class="flex items-center justify-between font-label-code text-label-code text-on-surface-variant">
+<span>Pkt Loss: <strong class="text-tertiary">0.00%</strong></span>
+<span>Jitter: <strong class="text-on-surface">1.2ms</strong></span>
+<span>Codec: <strong class="text-tertiary">48kHz Opus</strong></span>
+</div>
+</div>
+<!-- Probe 3: pgx Connection Pool -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">database</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">pgx Connection Pool &amp; Keep-Alive</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/30 text-tertiary text-label-badge font-label-badge">PASS</span>
+</div>
+<div class="flex items-center justify-between font-label-code text-label-code text-on-surface-variant">
+<span>Conns: <strong class="text-on-surface">12/20</strong></span>
+<span>Latency: <strong class="text-tertiary">1.4ms</strong></span>
+<span>Idle Timeouts: <strong class="text-on-surface">0</strong></span>
+</div>
+</div>
+<!-- Probe 4: Redis Pub/Sub -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[18px]">layers</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Redis Pub/Sub &amp; Ephemeral Cache</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/30 text-tertiary text-label-badge font-label-badge">PASS</span>
+</div>
+<div class="flex items-center justify-between font-label-code text-label-code text-on-surface-variant">
+<span>Hit Rate: <strong class="text-tertiary">98.4%</strong></span>
+<span>RSS: <strong class="text-on-surface">4.2MB</strong></span>
+<span>Evictions: <strong class="text-on-surface">0</strong></span>
+</div>
+</div>
+<!-- Probe 5: Long-Poll Heartbeat -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">stream</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Telegram Bot API Webhook Pulse</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/30 text-tertiary text-label-badge font-label-badge">PASS</span>
+</div>
+<div class="flex items-center justify-between font-label-code text-label-code text-on-surface-variant">
+<span>Flow: <strong class="text-on-surface">124 ev/s</strong></span>
+<span>Dropped: <strong class="text-tertiary">0</strong></span>
+<span>Ack Window: <strong class="text-on-surface">18ms</strong></span>
+</div>
+</div>
+<!-- Probe 6: FFmpeg & libopus -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]">settings_voice</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">FFmpeg &amp; libopus CGo Bindings</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/30 text-tertiary text-label-badge font-label-badge">OPTIMAL</span>
+</div>
+<div class="flex items-center justify-between font-label-code text-label-code text-on-surface-variant">
+<span>CGo Workers: <strong class="text-on-surface">2 Active</strong></span>
+<span>Under-runs: <strong class="text-tertiary">0</strong></span>
+<span>Ring Buffer: <strong class="text-on-surface">Clean</strong></span>
+</div>
+</div>
+</div>
+</section>
+<!-- Synthetic Load & Stress Simulator (Self-Test) -->
+<section class="w-full rounded-xl bg-surface-container p-space-md shadow-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">speed</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Synthetic Load Sim</span>
+</div>
+<span class="font-label-badge text-label-badge px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant uppercase">Sandbox</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Execute isolated load benchmarks against the daemon local socket stack.</p>
+<div class="flex flex-col gap-space-xs mt-1">
+<!-- Test 1 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-on-surface font-medium truncate">Simulate 500 Queries/sec</span>
+<span class="font-label-code text-[11px] text-on-surface-variant">Token bucket burst &amp; leaky bucket limit</span>
+</div>
+<button class="shrink-0 px-3 py-1.5 rounded-lg bg-surface-container-high text-primary hover:bg-surface-bright font-label-code text-label-code active:scale-95 transition-all" onclick="runSyntheticTest(this, '500 QPS Bucket PASS [0 dropped]')">
+          Run Test
+        </button>
+</div>
+<!-- Test 2 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-on-surface font-medium truncate">WebRTC UDP Loopback Ping</span>
+<span class="font-label-code text-[11px] text-on-surface-variant">Port range 10000-10050 sanity check</span>
+</div>
+<button class="shrink-0 px-3 py-1.5 rounded-lg bg-surface-container-high text-tertiary hover:bg-surface-bright font-label-code text-label-code active:scale-95 transition-all" onclick="runSyntheticTest(this, 'UDP Loopback RTT: 0.8ms OK')">
+          Run Test
+        </button>
+</div>
+<!-- Test 3 -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-on-surface font-medium truncate">Anthropic &amp; Gemini Pipeline</span>
+<span class="font-label-code text-[11px] text-on-surface-variant">Simulated downstream fallback failover</span>
+</div>
+<button class="shrink-0 px-3 py-1.5 rounded-lg bg-surface-container-high text-secondary hover:bg-surface-bright font-label-code text-label-code active:scale-95 transition-all" onclick="runSyntheticTest(this, 'Fallback Switch 210ms OK')">
+          Run Test
+        </button>
+</div>
+</div>
+</section>
+<!-- Self-Healing & Remediation Engine -->
+<section class="w-full rounded-xl bg-surface-container p-space-md shadow-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">healing</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Self-Healing Engine</span>
+</div>
+<span class="font-label-code text-label-code text-tertiary">STANDBY</span>
+</div>
+<!-- Toggle Item -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between gap-space-sm">
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-on-surface font-medium">Auto-Reconnect on 3x Missed Beats</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Reroute DC tunnel automatically without dropping stream</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" id="autoHealToggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-surface after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Remediation Buttons Matrix -->
+<div class="grid grid-cols-1 gap-space-xs mt-1">
+<button class="w-full p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface flex items-center justify-between active:scale-[0.99] transition-transform" onclick="triggerRemedy(this, 'Purging stale pipes...', 'Voice Pipelines Cleared (0 orphans)')">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]">cleaning_services</span>
+<span class="font-body-md text-body-md">Purge Orphaned Voice Pipelines</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_right</span>
+</button>
+<button class="w-full p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface flex items-center justify-between active:scale-[0.99] transition-transform" onclick="triggerRemedy(this, 'Triggering GC runtime...', 'GC Completed (4.8MB reclaimed)')">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">recycling</span>
+<span class="font-body-md text-body-md">Recycle Idle Goroutines &amp; Force GC</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_right</span>
+</button>
+<button class="w-full p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface flex items-center justify-between active:scale-[0.99] transition-transform" onclick="triggerRemedy(this, 'Renegotiating SDP...', 'WebRTC SDP Re-negotiated')">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">handshake</span>
+<span class="font-body-md text-body-md">Re-negotiate WebRTC SDP Handshake</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Recent Incident & Anomaly Log Feed -->
+<section class="w-full rounded-xl bg-surface-container p-space-md shadow-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">terminal</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Telemetry Audit Log</span>
+</div>
+<button class="font-label-code text-[11px] text-on-surface-variant hover:text-primary transition-colors" onclick="clearAuditLog()">Clear</button>
+</div>
+<!-- Console Log Stream -->
+<div class="flex flex-col gap-2 p-3 rounded-lg bg-surface-container-lowest font-label-code text-label-code" id="auditLogContainer">
+<!-- Event 1 -->
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-2">
+<span class="text-on-surface-variant text-[10px]">14:24:02</span>
+<span class="px-1.5 py-0.2 rounded bg-tertiary-container/20 text-tertiary text-[9px] font-bold">RESOLVED</span>
+</div>
+<p class="text-on-surface text-[11px] leading-tight">Temporary latency spike DC 5 (+40ms), auto-routed traffic to DC 4.</p>
+</div>
+<div class="w-full h-px bg-surface-variant/40"></div>
+<!-- Event 2 -->
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-2">
+<span class="text-on-surface-variant text-[10px]">14:18:19</span>
+<span class="px-1.5 py-0.2 rounded bg-primary-container/20 text-primary text-[9px] font-bold">HEALED</span>
+</div>
+<p class="text-on-surface text-[11px] leading-tight">Re-spawned idle FFmpeg worker #3 after audio buffer stall.</p>
+</div>
+<div class="w-full h-px bg-surface-variant/40"></div>
+<!-- Event 3 -->
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-2">
+<span class="text-on-surface-variant text-[10px]">13:50:11</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-high text-secondary text-[9px] font-bold">AUDIT</span>
+</div>
+<p class="text-on-surface text-[11px] leading-tight">Routine TLS cert &amp; Telegram session AuthKey verification passed.</p>
+</div>
+</div>
+</section>
+</div>
+<script>
+  function runProbeSequence() {
+    const btn = document.getElementById('triggerProbeBtn');
+    const icon = document.getElementById('probeIcon');
+    const label = document.getElementById('probeLabel');
+    if (!btn || !icon || !label) return;
+
+    icon.classList.add('animate-spin');
+    label.innerText = 'Scanning MTProto Sockets...';
+    btn.classList.add('opacity-75');
+
+    setTimeout(() => {
+      label.innerText = 'All 6 Probes Verified';
+      icon.classList.remove('animate-spin');
+      icon.innerText = 'check_circle';
+      btn.classList.remove('opacity-75');
+
+      // Prepend an entry to the log
+      const container = document.getElementById('auditLogContainer');
+      if (container) {
+        const now = new Date();
+        const timeStr = now.toTimeString().split(' ')[0];
+        const newLog = document.createElement('div');
+        newLog.className = 'flex flex-col gap-0.5 animate-fadeIn';
+        newLog.innerHTML = `
+          <div class="w-full h-px bg-surface-variant/40 mb-1.5"></div>
+          <div class="flex items-center gap-2">
+            <span class="text-on-surface-variant text-[10px]">${timeStr}</span>
+            <span class="px-1.5 py-0.2 rounded bg-tertiary-container/30 text-tertiary text-[9px] font-bold">PROBE-OK</span>
+          </div>
+          <p class="text-on-surface text-[11px] leading-tight">Manual trigger: All 5 DC sockets, WebRTC audio & Go heap optimal.</p>
+        `;
+        container.insertBefore(newLog, container.firstChild);
+      }
+
+      setTimeout(() => {
+        icon.innerText = 'radar';
+        label.innerText = 'Trigger Full Health Probe';
+      }, 3000);
+    }, 1200);
+  }
+
+  function runSyntheticTest(btn, successMsg) {
+    const originalText = btn.innerText;
+    btn.disabled = true;
+    btn.innerText = 'Testing...';
+    btn.classList.add('opacity-60');
+
+    setTimeout(() => {
+      btn.innerText = successMsg;
+      btn.classList.remove('opacity-60');
+      btn.classList.add('text-tertiary');
+
+      setTimeout(() => {
+        btn.innerText = originalText;
+        btn.disabled = false;
+        btn.classList.remove('text-tertiary');
+      }, 3000);
+    }, 850);
+  }
+
+  function triggerRemedy(btn, workingMsg, doneMsg) {
+    const originalContent = btn.innerHTML;
+    btn.innerHTML = `<span class="font-label-code text-label-code text-primary animate-pulse">${workingMsg}</span>`;
+    setTimeout(() => {
+      btn.innerHTML = `<span class="font-label-code text-label-code text-tertiary">${doneMsg}</span>`;
+      setTimeout(() => {
+        btn.innerHTML = originalContent;
+      }, 2500);
+    }, 900);
+  }
+
+  function rekeySessionNotice(btn) {
+    const originalText = btn.innerText;
+    btn.innerText = 'Validating...';
+    setTimeout(() => {
+      btn.innerText = 'AuthKey Valid';
+      btn.classList.add('bg-tertiary-container/30', 'text-tertiary');
+      setTimeout(() => {
+        btn.innerText = originalText;
+        btn.classList.remove('bg-tertiary-container/30', 'text-tertiary');
+      }, 2000);
+    }, 700);
+  }
+
+  function clearAuditLog() {
+    const container = document.getElementById('auditLogContainer');
+    if (container) {
+      container.innerHTML = '<div class="text-on-surface-variant text-[11px] italic">Telemetry logs cleared. Listening for real-time daemon events...</div>';
+    }
+  }
+</script></main></body></html>
